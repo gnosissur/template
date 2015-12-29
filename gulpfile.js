@@ -1,8 +1,7 @@
 var gulp = require('gulp-param')(require('gulp'), process.argv),
     plugins = require('gulp-load-plugins')(),
     merge = require('merge-stream'),
-    nodePath = '!node_modules/**',
-    bowerPath = '!bower_components/**';
+    ignore = '!{node_modules,bower_components,build}/**';
 
 gulp.task('serve', function(live, build, open) {
     var server = plugins.liveServer.static(build ? './build' : '.', 8080);
@@ -10,7 +9,7 @@ gulp.task('serve', function(live, build, open) {
     server.start();
 
     if (live) {
-        gulp.watch(['*.{js,css,html}', '**/*.{js,css,html,txt,json}', nodePath, bowerPath], function() {
+        gulp.watch(['*.{js,css,html}', '**/*.{js,css,html,txt,json}', ignore], function() {
             server.notify.apply(server, arguments);
         });
     }
@@ -39,7 +38,7 @@ gulp.task('img', function(force) {
 });
 
 gulp.task('copy', function(force) {
-    return gulp.src(['*.md', 'fonts/*', nodePath, bowerPath], {
+    return gulp.src(['*.md', 'fonts/*', ignore], {
             base: './'
         })
         /*.pipe(plugins.if(!force, plugins.changed('build')))*/
@@ -47,7 +46,7 @@ gulp.task('copy', function(force) {
 });
 
 gulp.task('html', function(force) {
-    return gulp.src(['*.html', '**/*.html', nodePath, bowerPath], {
+    return gulp.src(['*.html', '**/*.html', ignore], {
             base: './'
         })
         /*.pipe(plugins.if(!force, plugins.changed('build')))*/
@@ -65,7 +64,7 @@ gulp.task('js', function(force) {
 });
 
 gulp.task('css', function(force) {
-    return gulp.src(['*.css', '**/*.css', nodePath, bowerPath], {
+    return gulp.src(['*.css', '**/*.css', ignore], {
             base: './'
         })
         /*.pipe(plugins.if(!force, plugins.changed('build')))*/
