@@ -1,0 +1,32 @@
+header {
+    background-color: #424242;
+}
+
+#header-content {
+    top: 100px;
+    right: 100px;
+    height: initial;
+    width: 400px;
+}
+
+#header-content-centered {
+    transform: initial;
+}
+
+h1.title, div.sub-title-secondary {
+    text-align: left;
+    margin-top: 0;
+}
+
+h1.title:before {
+    display: none;
+}
+
+#intro-dictionary {
+    font-family: 'Special Elite', serif;
+    font-size: 1em;
+    padding: 0 30px 20px 20px;
+    display: inline-block;
+    width: 15em;
+    float: left;
+}

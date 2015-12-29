@@ -1,0 +1,22 @@
+{
+  "name": "gnosissur",
+  "version": "0.0.0",
+  "homepage": "https://github.com/gnosissur/gnosissur.github.io",
+  "authors": [
+    "Paul Henschel <paul.henschel@awv-informatik.ch>"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "waypoints": "~4.0.0"
+  }
+}
