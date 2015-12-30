@@ -25,9 +25,7 @@ gulp.task('serve', function(live, build, open) {
 gulp.task('img', function(force) {
     var pngquant = require('imagemin-pngquant');
     var imageminJpegRecompress = require('imagemin-jpeg-recompress');
-    return gulp.src(['*.{jpg,png,gif}', 'images/**/*.{jpg,png,gif}'], {
-            base: './'
-        })
+    return gulp.src(['*.{jpg,png,gif}', 'images/**/*.{jpg,png,gif}'], { base: './' })
         .pipe(plugins.if(!force, plugins.changed('build')))
         .pipe(plugins.imagemin({
             progressive: true,
@@ -38,40 +36,55 @@ gulp.task('img', function(force) {
 });
 
 gulp.task('copy', function(force) {
-    return gulp.src(['*.md', 'fonts/*', ignore], {
-            base: './'
-        })
+    return gulp.src(['*.md', 'fonts/*', ignore], { base: './' })
         /*.pipe(plugins.if(!force, plugins.changed('build')))*/
         .pipe(gulp.dest('build'))
 });
 
 gulp.task('html', function(force) {
-    return gulp.src(['*.html', '**/*.html', ignore], {
-            base: './'
-        })
+    var critical = require('critical').stream;
+    return gulp.src(['*.html', '**/*.html', ignore], { base: './' })
         /*.pipe(plugins.if(!force, plugins.changed('build')))*/
         /*.pipe(plugins.inlineSource())*/
+        .pipe(critical({
+            base: './',
+            inline: true,
+            css: ['site.css'],
+            minify: true,
+            width: 900,
+            height: 400,
+            ignore: [/url\(/,'@font-face',/print/]
+        }))
         .pipe(gulp.dest('build'))
 });
 
 gulp.task('js', function(force) {
-    return gulp.src(['*.js', '!gulpfile.js'], {
-            base: './'
-        })
+    return gulp.src(['*.js', '!gulpfile.js'], { base: './' })
         .pipe(plugins.if(!force, plugins.changed('build')))
         .pipe(plugins.uglify())
         .pipe(gulp.dest('build'))
 });
 
 gulp.task('css', function(force) {
-    return gulp.src(['*.css', '**/*.css', ignore], {
-            base: './'
-        })
+    return gulp.src(['*.css', '**/*.css', ignore], { base: './' })
         /*.pipe(plugins.if(!force, plugins.changed('build')))*/
         .pipe(plugins.autoprefixer())
         .pipe(plugins.csso())
         .pipe(gulp.dest('build'));
 });
+
+/*gulp.task('critical', function() {
+    var critical = require('critical');
+    critical.generate({
+        inline: true,
+        base: 'build/',
+        src: 'index.html',
+        dest: 'build/index.html',
+        minify: true,
+        width: 900,
+        height: 400
+    });
+});*/
 
 /*gulp.task('critical', ['default'], function() {
     var fs = require('fs');
