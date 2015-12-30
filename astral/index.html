@@ -25,28 +25,26 @@
 
 <body>
 
-    <div id="menu">
-        <nav class="clearfix">
-            <ul>
-                <li><a data-scroll href="#home">TITEL</a></li>
-                <li><a data-scroll href="#introduction">Einleitung</a></li>
-                <li><a data-scroll href="#about">Über Uns</a></li>
-                <li><a data-scroll href="#classes">Kurse</a></li>
-                <li><a data-scroll href="#contact">Kontakt</a></li>
-            </ul>
-        </nav>
-        <a href="/">HOME</a>
-    </div>
+    <nav id="menu" class="clearfix">
+        <ul>
+            <li><a data-scroll href="#home">TITEL</a></li>
+            <li><a data-scroll href="#introduction">Einleitung</a></li>
+            <li><a data-scroll href="#about">Über Uns</a></li>
+            <li><a data-scroll href="#classes">Kurse</a></li>
+            <li><a data-scroll href="#contact">Kontakt</a></li>
+        </ul>
+        <a href="/">&#9668; HOME</a>
+    </nav>
 
-    <div id="waypoints">
+    <nav id="waypoints">
       <a href="#home" data-scroll><p>Titel</p></a>
       <a href="#introduction" data-scroll><p>Einleitung</p></a>
       <a href="#about" data-scroll><p>Über Uns</p></a>
       <a href="#classes" data-scroll><p>Kurse</p></a>
       <a href="#contact" data-scroll><p>Kontakt</p></a>
-    </div>
+    </nav>
 
-    <div id="home">
+    <main id="home">
 
         <header data-scroll="#introduction">
             <div id="header-slider">
@@ -67,7 +65,7 @@
             </div>
         </header>
 
-        <div id="content">
+        <article>
 
             <section id="introduction" class="content">
                 <h4>Einleitung</h4>
@@ -99,7 +97,7 @@
                 <p>En el principio las teorías cuentan menos, incluso impiden el avance cuando les llenan las cabezas de los practicantes y no queda más espacio ni flexibilidad para las experiencias reales.</p>
             </section>
 
-            <aside class="section-quote" style="background-image: url(/images/bg.jpg); background-size: cover;">
+            <figure class="section-quote" style="background-image: url(/images/bg.jpg); background-size: cover;">
                 <div class="gradient-thick"></div>
                 <div class="quote-image-left" style="background-image: url(/images/b2.jpg);"></div>
                 <div class="quote-right">
@@ -109,7 +107,7 @@
                         <div class="author">Samael Aun Weor</div>
                     </div>
                 </div>
-            </aside>
+            </figure>
 
             <section id="classes" class="content">
                 <h4>Kurse</h4>
@@ -126,7 +124,7 @@
                 <p>También para las personas que salen en cuerpo astral normalmente, quizás las informaciones e ideas pueden aumentar las prácticas.</p>
             </section>
 
-            <aside class="section-quote dark" style="background-image: url(/images/bg.jpg); background-size: cover;">
+            <figure class="section-quote dark" style="background-image: url(/images/bg.jpg); background-size: cover;">
                 <div class="gradient-thick"></div>
                 <div class="quote-left">
                     <div class="quote-wrapper-left">
@@ -136,7 +134,7 @@
                     </div>
                 </div>
                 <div class="quote-image-right" style="background-image: url(/images/b1.jpg);"></div>
-            </aside>
+            </figure>
 
             <footer id="contact" class="content" style="padding-bottom: 0;">
                 <nav class="links nav-transparent">
@@ -169,8 +167,8 @@
                 <h4 style="margin-top: 120px;">Gnosis Sur</h4>
             </footer>
 
-        </div>
-    </div>
+        </article>
+    </main>
 
     <script src="/site.js" inline></script>
 

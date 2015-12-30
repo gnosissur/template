@@ -25,34 +25,32 @@
 
 <body>
 
-    <div id="menu">
-        <nav class="clearfix">
-            <ul>
-                <li><a data-scroll href="#home">TITEL</a></li>
-                <li><a data-scroll href="#introduction">Einleitung</a></li>
-                <li><a data-scroll href="#life">Lebenslauf</a></li>
-                <li><a data-scroll href="#teachings">Lehre</a></li>
-                <li><a data-scroll href="#contact">Kontakt</a></li>
-            </ul>
-        </nav>
-        <a href="/">HOME</a>
-    </div>
+    <nav id="menu" class="clearfix">
+        <ul>
+            <li><a data-scroll href="#home">TITEL</a></li>
+            <li><a data-scroll href="#introduction">Einleitung</a></li>
+            <li><a data-scroll href="#life">Lebenslauf</a></li>
+            <li><a data-scroll href="#teachings">Lehre</a></li>
+            <li><a data-scroll href="#contact">Kontakt</a></li>
+        </ul>
+        <a href="/">&#9668; HOME</a>
+    </nav>
 
-    <div id="waypoints">
+    <nav id="waypoints">
       <a href="#home" data-scroll><p>Titel</p></a>
       <a href="#introduction" data-scroll><p>Einleitung</p></a>
       <a href="#life" data-scroll><p>Lebenslauf</p></a>
       <a href="#teachings" data-scroll><p>Lehre</p></a>
       <a href="#contact" data-scroll><p>Kontakt</p></a>
-    </div>
+    </nav>
 
-    <div id="home">
+    <main id="home">
 
         <header data-scroll="#introduction">
             <div id="header-slider">
                 <div style="background-image: url(/images/front_saw_1.jpg); background-position: center; background-size: cover;"></div>
             </div>
-            <div class="logo-brand" style="background-image: url(/images/aeon13_w.png);">
+            <div class="logo-brand" style="background-image: url(/images/aeon13_t_w.png);">
                 asociación
                 <br/>cultural
                 <br/>gnosis samael lakhsmi
@@ -69,7 +67,7 @@
             </div>
         </header>
 
-        <div id="content">
+        <article>
 
             <section id="introduction" class="content">
                 <h4>Einleitung</h4>
@@ -91,8 +89,8 @@
                 <p>During those twenty-seven years, he experienced all the extremes that humanity could give him, from adoration to death threats, and in spite of the enormous popularity of his books and lectures, he renounced an income, refused recognitions, walked away from accolades, and consistently turned away those who would worship him. He held as friends both presidents and peasants, and yet remained a mystery to all.</p>
             </section>
 
-            <aside class="section-quote" style="background-image: url(/images/samael6.jpg); background-size: cover; background-position: center top; height: 300px;">
-            </aside>
+            <figure class="section-quote" style="background-image: url(/images/samael2.jpg); background-size: cover; background-position: center;">
+            </figure>
 
             <section id="life" class="content" style="padding-bottom: 5em;">
                 <h4>Leben und Werk</h4>
@@ -107,16 +105,8 @@
                 <p>When one reflects on the effort and will it requires to perform even day to day tasks, it is astonishing to consider the herculean efforts required to accomplish what he did in such a short time. But, there is a reason: he was a man who knew who he was, and what he had to do.</p>
             </section>
 
-            <aside class="section-quote dark" style="background-color: #f0f0f0; color: black;">
-                <div class="quote-left p40">
-                    <div class="quote-wrapper-left">
-                        <div class="quote">“</div>
-                        <div class="cite">In life, the only thing of importance is a radical, total, and definitive change. The rest, frankly, is of no importance at all</div>
-                        <div class="author">Samael Aun Weor</div>
-                    </div>
-                </div>
-                <div class="quote-image-right p60" style="background-image: url(/images/samael3.jpg);"></div>
-            </aside>
+            <figure class="section-quote" style="background-image: url(/images/samael6.jpg); background-size: cover; background-position: center top; height: 300px;">
+            </figure>
 
             <section id="teachings" class="content">
                 <h4>Lehre</h4>
@@ -141,8 +131,16 @@
                 <p>Samael Aun Weor veröffentlichte seine Publikationen in der Zeit zwischen 1950 und 1977. Sein Wunsch war, dass seine Bücher billig verkauft werden, damit auch die Armen diese erstehen können. Er hat niemals Autorenrechte oder Tantiemen verlangt und niemanden ermächtigt, diese zu verlangen. In einem Gnostischen Kongress 1976 in Guadalajara, Mexico, verzichtete er öffentlich auf diese und ernannte auch keine „Nachfolger seines Werkes“. Seine Bücher wurden in andere Sprachen wie Englisch, Französisch, Italienisch, Portugiesisch, Japanisch und einige seiner Werke auch ins Deutsche übersetzt.</p>
             </section>
 
-            <aside class="section-quote" style="background-image: url(/images/samael2.jpg); background-size: cover; background-position: center;">
-            </aside>
+            <figure class="section-quote dark" style="background-color: #f0f0f0; color: black;">
+                <div class="quote-left p40">
+                    <div class="quote-wrapper-left">
+                        <div class="quote">“</div>
+                        <div class="cite">In life, the only thing of importance is a radical, total, and definitive change. The rest, frankly, is of no importance at all</div>
+                        <div class="author">Samael Aun Weor</div>
+                    </div>
+                </div>
+                <div class="quote-image-right p60" style="background-image: url(/images/samael3.jpg);"></div>
+            </figure>
 
             <footer id="contact" class="content" style="padding-bottom: 0;">
                 <nav class="links nav-transparent">
@@ -172,11 +170,11 @@
                     </div>
                 </nav>
 
-                <h4 style="margin-top: 120px;">Gnosis Sur</h4>
+                <h4 style="margin-top: 120px;">Gnosiskultur</h4>
             </footer>
 
-        </div>
-    </div>
+        </article>
+    </main>
 
     <script src="/site.js" inline></script>
 

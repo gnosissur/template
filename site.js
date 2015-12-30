@@ -16,7 +16,7 @@
         banner = document.querySelector('#banner'),
         slides = document.querySelectorAll('#header-slider > div'),
         captions = document.querySelectorAll('#header-slider > div .caption'),
-        content = document.querySelector('#content'),
+        content = document.querySelector('article'),
         wrapper = document.querySelector('#wrapper'),
         nav = document.querySelector('nav'),
         navTop = document.querySelector('#menu'),
@@ -39,7 +39,7 @@
 
     var stretchHeader = function() {
         headerSliderHeight = window.innerHeight;
-        [].forEach.call(document.querySelectorAll('#home, section:not(.section-quote), footer'), function(item) {
+        [].forEach.call(document.querySelectorAll('main, section:not(.section-quote), footer'), function(item) {
             wayPoints[item.id] = {
                 item: item,
                 offset: item.getBoundingClientRect().top + scrollPos,
@@ -166,7 +166,7 @@
                         obj = point;
                     }
                 });
-                
+
                 if (!!obj && obj != wayPointObject) {
                     if (!!wayPointObject) {
                         wayPointObject.waypoint.classList.remove('active');
