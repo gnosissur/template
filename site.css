@@ -686,7 +686,7 @@ a {
 }
 
 .cite {
-    font-size: 1.4em;
+    font-size: 1.8em;
     font-family: "Gotham-Medium", sans-serif;
     color: inherit;
     margin-bottom: 2.188em;
@@ -752,7 +752,9 @@ a {
 .quote-full {
     position: absolute;
     width: 100%;
-    height: 100%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .quote-right {
     position: absolute;
@@ -773,11 +775,11 @@ a {
     text-align: center;
 }
 .quote-wrapper-right {
-    margin: 0 20%;
+    margin: 0 20% 0 0;
     text-align: center;
 }
 .quote-wrapper-left {
-    margin: 0 20%;
+    margin: 0 0 0 20%;
     text-align: center;
 }
 

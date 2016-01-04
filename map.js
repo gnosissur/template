@@ -184,4 +184,9 @@ function initMap() {
         web: web
     }), 'http://' != web.substring(0, 7) ? link = 'http://' + web : link = web, e(marker, l, n[i][0], description, telephone, email, web, link)
 }
-var map;
+var map, script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = 'https://maps.googleapis.com/maps/api/js?v=3&callback=initMap';
+script.async = true;
+script.defer = true;
+document.body.appendChild(script);
