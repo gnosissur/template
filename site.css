@@ -52,43 +52,6 @@ body {
     font-size: 100%;
 }
 
-#menu {
-    position: fixed;
-    z-index: 1000;
-    width: 100%;
-    height: 3.125em;
-    overflow:hidden;
-    transition: all 0.2s ease-out;
-    transform: translate3d(0,-5em,0);
-    backface-visibility: hidden;
-    text-align: center;
-    color: black;
-    background-color: #efefef;
-    font-family: 'Gotham-Medium', sans-serif;
-    text-transform: uppercase;
-    font-size: 0.875em;
-    line-height: 0.875em;
-    letter-spacing: 0em;
-    will-change: transform;
-    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.4);
-    opacity:0.9;
-}
-
-#menu > a, #menu > span {
-    position: absolute;
-    top: 0;
-    margin-left: 50px;
-    display: block;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background-color: #f9333f;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
 nav {
     position: absolute;
     text-align: center;
@@ -123,12 +86,49 @@ nav > ul > li > a:hover, #menu > a:hover {
     box-shadow: inset 0 -0.1875em 0 0 #676767;
 }
 
-.active {
+nav > ul > li > a.active {
     box-shadow: inset 0 -0.1875em 0 0 #f9333f!important;
 }
 
-.nav-up {
+nav.nav-up {
     transform: translate3d(0,0,0)!important;
+}
+
+#menu {
+    position: fixed;
+    z-index: 2000;
+    width: 100%;
+    height: 3.125em;
+    overflow:hidden;
+    transition: all 0.2s ease-out;
+    transform: translate3d(0,-5em,0);
+    backface-visibility: hidden;
+    text-align: center;
+    color: black;
+    background-color: white;
+    font-family: 'Gotham-Medium', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.875em;
+    line-height: 0.875em;
+    letter-spacing: 0em;
+    will-change: transform;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.4);
+    opacity:0.9;
+}
+
+#menu > a, #menu > span {
+    position: absolute;
+    top: 0;
+    margin-left: 50px;
+    display: block;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #f9333f;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #waypoints {
@@ -137,7 +137,7 @@ nav > ul > li > a:hover, #menu > a:hover {
     top: 50%;
     top: calc(50% - 50px);
     width: 50px;
-    z-index: 1000;
+    z-index: 2000;
     display: block;
     font-family: 'Gotham-Medium', sans-serif;
     font-size: 12px;
@@ -155,7 +155,6 @@ nav > ul > li > a:hover, #menu > a:hover {
     overflow: hidden;
     text-align: center;
     transition: width 0.25s;
-    /*box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.15);*/
     margin-bottom: 14px;
 }
 
@@ -203,6 +202,7 @@ header {
     will-change: transform;
     touch-callout: none;
     user-select: none;
+    z-index: 500;
 }
 
 #header-slider {
@@ -218,29 +218,12 @@ header {
     height: 100%;
     transition: opacity 1s ease-in;
     background-size: cover;
-    background-position: left top;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 #header-slider > div:nth-child(1) {
     opacity: 1;
-}
-
-figure, section, footer {
-    position: relative;
-    font-family: 'Open Sans', sans-serif;
-    overflow: hidden;
-    color: black;
-    margin: 0;
-}
-
-section:nth-of-type(even) {background-color: #F8F8F8;}
-section:nth-of-type(odd) {background-color: white;}
-
-footer {
-    color: white;
-    background-color: #272727;
-    /*height: 100vh;*/
 }
 
 #header-content {
@@ -259,7 +242,7 @@ footer {
     transform: translateY(-50%);
 }
 
-.logo-brand {
+header .brand {
     position:absolute;
     left: 50px;
     bottom: 50px;
@@ -270,34 +253,60 @@ footer {
     text-transform: uppercase;
     text-align: left;
     font-family: 'Open Sans', sans-serif;
-    /*font-family: 'Gotham-Medium', sans-serif;*/
     font-size: 0.9375em;
     line-height: 1.125em;
     letter-spacing: 0.0625em;
 }
 
+figure, section, footer {
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+    color: black;
+    margin: 0;
+}
+
+section:nth-of-type(even) {background-color: #F8F8F8;}
+section:nth-of-type(odd) {background-color: white;}
 
 article {
     position: relative;
     transform: translate3d(0,0,0);
     backface-visibility: hidden;
     margin-top: 100vh;
+    margin-bottom: 100vh;
+    z-index: 1000;
 }
 
-/* ----------------------------------------------------------------------- Page layout */
-
-/* Typography & section design ------------------------------------------------------- */
 figure {
+    padding: 0;
+    height: 500px;
+    background-size: cover;
+    background-position: center;    
+    background-color: #212121;
     color: white;
 }
 
-header.content, section.content, footer.content {
+footer {
+    position: fixed;
+    color: black;
+    background-color: #DEDEDE;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    backface-visibility: hidden;
+    transform: translate3d(0,0,0);
+    will-change: transform;
+    top: 0;
+}
+
+section {
     padding: 0 20%;
     padding-top: 15em;
     padding-bottom: 8em;
 }
 
-header.content > p, section.content > p, footer.content > p {
+section > p {
     margin-bottom: 1.875em;
     line-height: 1.75em;
     padding: 0 0.9375em;
@@ -309,17 +318,17 @@ header.content > p, section.content > p, footer.content > p {
     line-height: 1.6em;
 }
 
-section.content a {
+section a {
     background-color: #e0e0e0;
     color: black;
 }
 
-section.content a:hover {
+section a:hover {
     background-color: black;
     color: white;
 }
 
-header.content > p:first-of-type::first-letter, section.content > p:first-of-type::first-letter, footer.content > p:first-of-type::first-letter {
+section > p:first-of-type::first-letter {
     float: left;
     margin: 18px 10px 0px 0px;
     font-weight: 400;
@@ -327,6 +336,38 @@ header.content > p:first-of-type::first-letter, section.content > p:first-of-typ
     line-height: 40px;
     font-weight: 600;
 }
+
+#map{height:100%;width:100%}
+.gm-style-iw *{display:block;width:100%}
+.gm-style-iw h4,.gm-style-iw p{margin:0;padding:0}
+.gm-style-iw a{color:#4272db}
+.gm-style-iw h4{text-align: left;}
+.gm-style-iw h4:before{display: none;}
+
+/* ----------------------------------------------------------------------- Page layout */
+
+/* Typography & section design ------------------------------------------------------- */
+::-webkit-scrollbar
+{
+  width: 12px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background:  #a0a0a0;
+}
+
+::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-thumb:active
+{
+  background: #373737;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Gotham-Medium', sans-serif;
@@ -414,11 +455,21 @@ h6 { font-size: 0.9375em; }
 
 
 
-.links {
-    position: relative;
+nav.links {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    text-align: left;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-color: white;
+    color: #676767;
+    /*box-shadow: 0px -2px 6px 0px rgba(0,0,0,0.1);*/
 }
 
-
+nav.links > div.menu {
+    padding: 0 100px;
+}
 
 .dark {
     background-color: #373737;
@@ -556,27 +607,35 @@ a {
     margin-left: -15px;
     bottom: -20px;
 }
-.menu__item--social a {
-    margin: 30px;
-    padding-bottom: 2px;
-    border-bottom: 1px solid #dddddd;
+
+.menu__item > a {
+    padding: 10px;
     text-transform: uppercase;
     color: inherit;
+    line-height: 2em;
 }
 
-.menu__item--social img {
-    display: block;
+.menu__item > i {
+    width: 20px;
+}
+
+.menu__item > img {
+    display: inline;
     margin: 0 auto;
-    margin-bottom: 10px;
+    width: 1.5em;
+    position: relative;
+    top: 0.25em;
 }
 
 .menu__item {
-    display: inline-block;
+    display: block;
     margin-bottom: 0;
+    font-size: 1em;
 }
-.menu__item--social a:hover {
-    color: #aaaaaa;
+.menu__item > a:hover {
+    color: #aaa;
 }
+
 .quote {
     margin: 0 auto;
     margin-bottom: 20px;
@@ -613,11 +672,6 @@ a {
     font-family: 'Open Sans', sans-serif;
     font-size: 1em;
     color: inherit;
-}
-
-.section-quote {
-    padding: 0;
-    height: 500px;
 }
 
 .container-quote {

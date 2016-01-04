@@ -20,6 +20,12 @@ gulp.task('serve', function(live, build, open) {
                 uri: 'http://localhost:8080/index.html'
             }));
     }
+
+    try {
+        var os = require( 'os' );
+        var networkInterfaces = os.networkInterfaces();
+        console.log('local ip: ' + networkInterfaces['wlan0'][0].address);
+    } catch(e) {}
 });
 
 gulp.task('img', function(force) {
@@ -42,20 +48,9 @@ gulp.task('copy', function(force) {
 });
 
 gulp.task('html', function(force) {
-    var critical = require('critical').stream;
     return gulp.src(['*.html', '**/*.html', ignore], { base: './' })
         /*.pipe(plugins.if(!force, plugins.changed('build')))*/
-        /*.pipe(plugins.inlineSource())*/
-        .pipe(critical({
-            base: './',
-            inline: true,
-            css: ['site.css'],
-            minify: true,
-            width: 900,
-            height: 400,
-            ignore: [/url\(/,'@font-face',/print/]
-        }))
-        .pipe(gulp.dest('build'))
+        .pipe(gulp.dest('build'));
 });
 
 gulp.task('js', function(force) {
@@ -73,52 +68,21 @@ gulp.task('css', function(force) {
         .pipe(gulp.dest('build'));
 });
 
-/*gulp.task('critical', function() {
-    var critical = require('critical');
-    critical.generate({
-        inline: true,
-        base: 'build/',
-        src: 'index.html',
-        dest: 'build/index.html',
-        minify: true,
-        width: 900,
-        height: 400
-    });
-});*/
-
-/*gulp.task('critical', ['default'], function() {
-    var fs = require('fs');
-    var penthouse = require('penthouse');
-    var cave = require("cave");
-    var source = require('vinyl-source-stream');
-    var CleanCSS = require('clean-css');
-
-    var server = plugins.liveServer.static('./build', 4567);
-    server.config.livereload = false;
-    server.start();
-
-    penthouse({
-        url : 'http://localhost:4567/index.html',
-        css : 'build/default.css',
-        width : 600,   // viewport width
-        height : 400   // viewport height
-    }, function(err, output) {
-
-        server.stop();
-
-        var minified = new CleanCSS().minify(output).styles;
-        console.log(output)
-        var caved = cave("build/default.css", { css: minified });
-        stream = source('site.css');
-        stream.end(caved);
-        stream.pipe(plugins.minifyCss())
-            .pipe(gulp.dest('build'));
-
-        gulp.src('build/index.html')
-            .pipe(plugins.replace('default.css', 'site.css'))
-            .pipe(plugins.htmlReplace({ 'criticalcss': '<style>' + minified + '</style>' }))
-            .pipe(gulp.dest('build'));
-    });
-});*/
-
-gulp.task('default', ['copy', 'js', 'css', 'html', 'img']);
+gulp.task('default', ['copy', 'js', 'css', 'html', 'img'], function(lean) {
+    if (!lean) {
+        var critical = require('critical').stream;
+        return gulp.src(['build/*.html', 'build/**/*.html'], { base: './build' })
+            /*.pipe(plugins.if(!force, plugins.changed('build')))*/
+            .pipe(plugins.inlineSource())
+            .pipe(critical({
+                base: './build',
+                inline: true,
+                css: ['build/site.css'],
+                minify: true,
+                width: 900,
+                height: 400,
+                ignore: [/url\(/,'@font-face',/print/,'mobile.css']
+            }))
+            .pipe(gulp.dest('./build'));
+    }
+});

@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/gnosissur/gnosissur#readme",
   "devDependencies": {
+    "bower": "^1.7.2",
     "cave": "^2.0.0",
     "clean-css": "^3.4.8",
     "critical": "^0.7.0",
