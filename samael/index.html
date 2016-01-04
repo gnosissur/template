@@ -20,7 +20,7 @@
 
 <body>
 
-    <nav id="menu" class="clearfix">
+    <nav class="title">
         <ul>
             <li><a data-scroll href="#home">TITEL</a></li>
             <li><a data-scroll href="#introduction">Einleitung</a></li>
@@ -31,7 +31,7 @@
         <a href="/">&#9668; HOME</a>
     </nav>
 
-    <nav id="waypoints">
+    <nav class="waypoints">
       <a href="#home" data-scroll><p>Titel</p></a>
       <a href="#introduction" data-scroll><p>Einleitung</p></a>
       <a href="#life" data-scroll><p>Lebenslauf</p></a>
@@ -124,6 +124,7 @@
             </section>
 
             <figure>
+                <div class="quote-image" style="background-image: url(/images/samael3.jpg); background-position: center;"></div>
                 <div class="quote-left p40">
                     <div class="quote-wrapper-left">
                         <div class="quote">“</div>
@@ -131,48 +132,35 @@
                         <div class="author">Samael Aun Weor</div>
                     </div>
                 </div>
-                <div class="quote-image-right p60" style="background-image: url(/images/samael3.jpg);"></div>
             </figure>
 
-            <section id="contact" style="margin: 0; padding: 0;"></section>
+            <section><h4>Kontakt</h4></section>
+            <section id="contact" style="padding:0;"></section>
 
         </article>
 
         <footer>
-            <div id='map'></div>
-
-            <nav class="links nav-transparent">
-                <div class="menu">
+            <div class="map"></div>
+            <div class="notes">
+                <nav class="links">
                     <ul>
-                        <li class="menu__item">
-                            <i class="fa fa-twitter"></i>
-                            <a href="http://twitter.com/gnosissur" target="_blank">Twitter</a>
-                        </li>
-                        <li class="menu__item">
-                            <i class="fa fa-facebook"></i>
-                            <a href="https://www.facebook.com/Gnosis-süd-1673072769616476" target="_blank">Facebook</a>
-                        </li>
-                        <li class="menu__item">
-                            <i class="fa fa-instagram"></i>
-                            <a href="#">Instagram</a>
-                        </li>
-                        <li class="menu__item">
-                            <i class="fa fa-mixcloud"></i>
-                            <a href="http://mixlr.com/gnosisellas" target="_blank">Mixlr</a>
-                        </li>
-                        <li class="menu__item">
-                            <i class="fa fa-envelope-o"></i>
-                            <a href="mailto:gnosissur@gmail.com" target="_blank">Mail</a>
-                        </li>
+                        <li><i class="fa fa-twitter"></i><a href="http://twitter.com/gnosissur" target="_blank">Twitter</a></li>
+                        <li><i class="fa fa-facebook"></i><a href="https://www.facebook.com/Gnosis-süd-1673072769616476" target="_blank">Facebook</a></li>
+                        <li><i class="fa fa-instagram"></i><a href="#">Instagram</a></li>
+                        <li><i class="fa fa-mixcloud"></i><a href="http://mixlr.com/gnosisellas" target="_blank">Mixlr</a></li>
+                        <li><i class="fa fa-envelope-o"></i><a href="mailto:gnosissur@gmail.com" target="_blank">Mail</a></li>
                     </ul>
-
-                </div>
-            </nav>
+                </nav>
+                <a class="twitter-timeline" href="https://twitter.com/gnosissur" data-widget-id="684002078981799937" width="400" height="250" data-chrome="nofooter transparent noborders noscrollbar" style="margin-right: 50px;">Tweets von @gnosissur </a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                <span><img src="/images/header-brand.png"> Ist Teil der Asociación Cultural Gnosis Samael Lakhsmi; Alle Rechte vorbehalten, &copy; Gnosis Kultur Freiburg 2016</span>
+            </div>
         </footer>
 
     </main>
 
     <script src="/site.js"></script>
+    <script src="/map.js"></script>
     <script async defer src='https://maps.googleapis.com/maps/api/js?v=3&callback=initMap'></script>
 
 </body>

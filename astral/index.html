@@ -19,7 +19,7 @@
 
 <body>
 
-    <nav id="menu" class="clearfix">
+    <nav class="title">
         <ul>
             <li><a data-scroll href="#home">TITEL</a></li>
             <li><a data-scroll href="#introduction">Einleitung</a></li>
@@ -30,7 +30,7 @@
         <a href="/">&#9668; HOME</a>
     </nav>
 
-    <nav id="waypoints">
+    <nav class="waypoints">
       <a href="#home" data-scroll><p>Titel</p></a>
       <a href="#introduction" data-scroll><p>Einleitung</p></a>
       <a href="#about" data-scroll><p>Über Uns</p></a>
@@ -91,14 +91,12 @@
                 <p>En el principio las teorías cuentan menos, incluso impiden el avance cuando les llenan las cabezas de los practicantes y no queda más espacio ni flexibilidad para las experiencias reales.</p>
             </section>
 
-            <figure style="background-image: url(/images/bg.jpg);">
-                <div class="gradient-thick"></div>
-                <div class="quote-image-left" style="background-image: url(/images/b2.jpg);"></div>
-                <div class="quote-right">
-                    <div class="quote-wrapper-right">
-                        <div class="quote">“</div>
+            <figure>
+                <div class="quote-image" style="background-image: url(/images/b1.jpg);"></div>
+                <div class="quote-left p40">
+                    <div class="quote-wrapper-left">
                         <div class="cite">In life, the only thing of importance is a radical, total, and definitive change. The rest, frankly, is of no importance at all</div>
-                        <div class="author">Samael Aun Weor</div>
+                        <div class="author"><i class="fa fa-hashtag"></i>VM Lakhsmi</div>
                     </div>
                 </div>
             </figure>
@@ -118,53 +116,44 @@
                 <p>También para las personas que salen en cuerpo astral normalmente, quizás las informaciones e ideas pueden aumentar las prácticas.</p>
             </section>
 
-            <figure style="background-image: url(/images/bg.jpg);">
-                <div class="gradient-thick"></div>
-                <div class="quote-left">
-                    <div class="quote-wrapper-left">
-                        <div class="quote">“</div>
+            <figure>
+                <div class="quote-image" style="background-image: url(/images/b2.jpg);"></div>
+                <div class="quote-right p40">
+                    <div class="quote-wrapper-right">
                         <div class="cite">In life, the only thing of importance is a radical, total, and definitive change. The rest, frankly, is of no importance at all</div>
-                        <div class="author">VM Lakhsmi</div>
+                        <div class="author"><i class="fa fa-hashtag"></i>Samael Aun Weor</div>
                     </div>
                 </div>
-                <div class="quote-image-right" style="background-image: url(/images/b1.jpg);"></div>
             </figure>
 
-            <footer id="contact" style="padding-bottom: 0;">
-                <nav class="links nav-transparent">
-                    <div class="menu">
-                        <ul>
-                            <li class="menu__item menu__item--social">
-                                <img src="/images/social/twitter.png">
-                                <a href="https://twitter.com/GnosisAeonTrece" target="_blank">Twitter</a>
-                            </li>
-                            <li class="menu__item menu__item--social">
-                                <img src="/images/social/facebook.png">
-                                <a href="https://facebook.com/gnosis.samaellakhsmigreece" target="_blank">Facebook</a>
-                            </li>
-                            <li class="menu__item menu__item--social">
-                                <img src="/images/social/instagram.png">
-                                <a href="#">Instagram</a>
-                            </li>
-                            <li class="menu__item menu__item--social">
-                                <img src="/images/social/you-tube.png">
-                                <a href="http://mixlr.com/gnosisellas" target="_blank">Mixlr</a>
-                            </li>
-                            <li class="menu__item menu__item--social">
-                                <img src="/images/social/share_this.png">
-                                <a href="#">Mail</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-
-                <h4 style="margin-top: 120px;">Gnosis Sur</h4>
-            </footer>
+            <section><h4>Kontakt</h4></section>
+            <section id="contact" style="padding:0;"></section>
 
         </article>
+
+        <footer>
+            <div class="map"></div>
+            <div class="notes">
+                <nav class="links">
+                    <ul>
+                        <li><i class="fa fa-twitter"></i><a href="http://twitter.com/gnosissur" target="_blank">Twitter</a></li>
+                        <li><i class="fa fa-facebook"></i><a href="https://www.facebook.com/Gnosis-süd-1673072769616476" target="_blank">Facebook</a></li>
+                        <li><i class="fa fa-instagram"></i><a href="#">Instagram</a></li>
+                        <li><i class="fa fa-mixcloud"></i><a href="http://mixlr.com/gnosisellas" target="_blank">Mixlr</a></li>
+                        <li><i class="fa fa-envelope-o"></i><a href="mailto:gnosissur@gmail.com" target="_blank">Mail</a></li>
+                    </ul>
+                </nav>
+                <a class="twitter-timeline" href="https://twitter.com/gnosissur" data-widget-id="684002078981799937" width="400" height="250" data-chrome="nofooter transparent noborders noscrollbar" style="margin-right: 50px;">Tweets von @gnosissur </a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                <span><img src="/images/header-brand.png"> Ist Teil der Asociación Cultural Gnosis Samael Lakhsmi; Alle Rechte vorbehalten, &copy; Gnosis Kultur Freiburg 2016</span>
+            </div>
+        </footer>
+
     </main>
 
     <script src="/site.js"></script>
+    <script src="/map.js"></script>
+    <script async defer src='https://maps.googleapis.com/maps/api/js?v=3&callback=initMap'></script>
 
 </body>
 
