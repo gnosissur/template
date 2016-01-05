@@ -596,7 +596,7 @@ section > blockquote {
     letter-spacing: 0.1em;
     line-height: 1.35em;
     text-transform: uppercase;
-    transform: scale(1, 0.9);
+    transform: scale(1, 0.85);
     margin-top: 50px;
     margin-left: 50px;
     margin-bottom: 70px;
