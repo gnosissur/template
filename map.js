@@ -1,3 +1,9 @@
+var mapData = mapData || {
+    zoom: 2,
+    lat: 0,
+    lng: 0
+};
+
 function initMap() {
     function e(e, i, o, t, l, n, r, s) {
         var a = function() {
@@ -20,8 +26,8 @@ function initMap() {
         })
     }
     var o = {
-            center: new google.maps.LatLng(47.990, 7.837954),
-            zoom: 14,
+            center: new google.maps.LatLng(mapData.lat, mapData.lng),
+            zoom: mapData.zoom,
             zoomControl: !0,
             zoomControlOptions: {
                 style: google.maps.ZoomControlStyle.SMALL
