@@ -80,7 +80,6 @@ nav.title {
     transform: translate3d(0,-5em,0);
     backface-visibility: hidden;
     text-align: center;
-    color: black;
     background-color: white;
     font-family: 'Gotham-Medium', sans-serif;
     text-transform: uppercase;
@@ -134,8 +133,6 @@ nav.title > a, nav.title > span {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    background-color: #c8c8c8;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -625,11 +622,11 @@ section > blockquote > span.small {
     vertical-align: middle;
 }
 
-section span.mark {
+.mark {
     position: relative;
 }
 
-section span.mark:before {
+.mark:before {
     content: '';
     position: absolute;
     bottom: -10%;
