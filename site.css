@@ -3,6 +3,18 @@
     src: url(/fonts/Gotham-Medium.otf);
 }
 
+@font-face {
+    font-family: Akzidenz-Grotesk;
+    src: url(/fonts/Akzidenz-Grotesk-BE-Condensed.ttf);
+}
+
+@font-face {
+    font-family: Worldwide-Headline;
+    src: url(/fonts/Worldwide-Headline-Bold.woff) format('truetype');
+    font-weight: normal;
+    font-style: normal
+}
+
 /* HTML reset ------------------------------------------------------------------------ */
 html, body {
     margin: 0;
@@ -22,7 +34,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 p::selection, span::selection, div::selection, h1::selection, h2::selection, h3::selection, blockquote::selection, pre::selection, a::selection {
-  background: #ffb7b7;
+  background: #f9333f;
+  color: white;
 }
 
 body, input, textarea {
@@ -567,8 +580,46 @@ h6 { font-size: 0.9375em; }
 }
 /* ------------------------------------------------------- Typography & section design */
 
+section > blockquote:after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 320px;
+    height: 1px;
+    background-color: #F73A46;
+}
 
+section > blockquote {
+    font-family: Worldwide-Headline, serif;
+    font-size: 2.375em;
+    letter-spacing: 0.1em;
+    line-height: 1.35em;
+    text-transform: uppercase;
+    transform: scale(1, 0.9);
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-bottom: 70px;
+    white-space: nowrap;
+}
 
+section > blockquote > span.small {
+    font-family: Akzidenz-Grotesk, sans-serif;
+    font-size: 0.6em;
+    letter-spacing: 0.35em;
+    line-height: 1.35em;
+    vertical-align: middle;
+}
+
+section > blockquote > span.mark {
+    background-color: black;
+    color: white;
+}
+
+section > blockquote > span.indent {
+    display: inline-block;
+    width: 1.5em;
+}
 
 .hidden {
     display: none;
