@@ -34,7 +34,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 p::selection, span::selection, div::selection, h1::selection, h2::selection, h3::selection, blockquote::selection, pre::selection, a::selection {
-  background: #f9333f;
+  background: rgba(247, 58, 70, 0.3);
   color: white;
 }
 
@@ -332,10 +332,20 @@ section > div.bio:before {
     content: '';
     height: 100%;
     width: 1px;
-    background-color: #000000;
+    background-color: rgba(247, 58, 70, 0.3);
     position: absolute;
     top: 0;
     left: -50px;
+}
+
+section > div.bio:after {
+    content: '';
+    height: 100%;
+    width: 1px;
+    background-color: rgba(247, 58, 70, 0.3);
+    position: absolute;
+    top: 0;
+    right: -50px;
 }
 
 section > div.bio > p {
@@ -351,31 +361,36 @@ section > div.bio > p {
 }
 
 section > div.bio > p > span {
-    background-color: #F73A46;
-    color: white;
     margin-left: -20px;
     position: relative;
 }
 
-section > div.bio > p > span:before {
+section > div.bio > p > span:after {
     content: '';
     height: 1px;
     width: 55px;
-    background-color: #000000;
+    background-color: rgba(247, 58, 70, 0.3);
     position: absolute;
     bottom: 0;
     left: -55px;
 }
 
 section a {
-    background-color: #e0e0e0;
-    color: black;
-    padding-bottom: 10px;
+    position: relative;
 }
 
-section a:hover {
-    background-color: black;
-    color: white;
+section a:before {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background-color: rgba(58, 195, 247, 0.3);
+}
+
+section a:hover:before {
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 section > p:first-of-type::first-letter {
@@ -534,8 +549,7 @@ h1:before, h2:before, h3:before, h4:before, h5:before, h6:before {
     content: '';
     position: absolute;
     width: 2em;
-    height: 0.075em;
-    min-height: 1px;
+    height: 1px;
     background-color: #EE2B45;
     left: 50%;
     margin-left: -1em;
@@ -592,11 +606,11 @@ section > blockquote:after {
 
 section > blockquote {
     font-family: Worldwide-Headline, serif;
-    font-size: 2.375em;
+    font-size: 2.25em;
     letter-spacing: 0.1em;
     line-height: 1.35em;
     text-transform: uppercase;
-    transform: scale(1, 0.85);
+    transform: scale(1.05, 0.85);
     margin-top: 50px;
     margin-left: 50px;
     margin-bottom: 70px;
@@ -605,15 +619,24 @@ section > blockquote {
 
 section > blockquote > span.small {
     font-family: Akzidenz-Grotesk, sans-serif;
-    font-size: 0.6em;
+    font-size: 0.55em;
     letter-spacing: 0.35em;
     line-height: 1.35em;
     vertical-align: middle;
 }
 
-section > blockquote > span.mark {
-    background-color: black;
-    color: white;
+section span.mark {
+    position: relative;
+}
+
+section span.mark:before {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background-color: rgba(247, 58, 70, 0.3);
 }
 
 section > blockquote > span.indent {
@@ -788,10 +811,9 @@ a {
 }
 
 .cite {
-    font-size: 1.8em;
-    font-family: "Gotham-Medium", sans-serif;
+    font-size: 2.5em;
+    font-family: Worldwide-Headline, serif;
     color: inherit;
-    margin-bottom: 2.188em;
     background-color: black;
     display: initial;
     padding-bottom: 10px;
@@ -801,15 +823,20 @@ a {
     /*margin-bottom: 15px;*/
 }
 .author {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1em;
+    font-family: Akzidenz-Grotesk, sans-serif;
+    font-size: 2em;
     color: inherit;
     background-color: #F73A46;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-bottom: 10px;
     display: inline-block;
-    margin-top: 10px;
     text-transform: uppercase;
+    position: relative;
 }
+
+div.quote-wrapper-right > .author { float: right; left: 7px; }
+div.quote-wrapper-left > .author { float: left; left: -7px; }
 
 .container-quote {
     height: 100%;
@@ -878,11 +905,11 @@ a {
 }
 .quote-wrapper-right {
     margin: 0 20% 0 0;
-    text-align: center;
+    text-align: right;
 }
 .quote-wrapper-left {
     margin: 0 0 0 20%;
-    text-align: center;
+    text-align: left;
 }
 
 .p70 {
