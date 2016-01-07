@@ -2,6 +2,36 @@ header {
     background-color: #747474;
 }
 
-#header-content {
-    background-color: rgba(100, 100, 100, 0.6);
+#header-content-centered {
+    position: absolute;
+    transform: translate3d(0,-50%,0);
+    top: 50%;
+    left: 45%;
+    width: 400px;
+}
+
+h1.title, div.sub-title-secondary {
+    text-align: left;
+    margin-top: 0;
+    display: initial;
+    background-color: black;
+}
+
+div.sub-title-secondary {
+    line-height: 0;
+}
+
+h1.title:before {
+    display: none;
+}
+
+#header-slider > div > div {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease-in;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
