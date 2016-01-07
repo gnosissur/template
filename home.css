@@ -1,8 +1,7 @@
-#intro-dictionary {
-    font-family: 'Special Elite', serif;
-    font-size: 1em;
-    padding: 0 30px 20px 20px;
-    display: inline-block;
-    width: 15em;
-    float: left;
+header {
+    background-color: rgba(48,60,92,1);
+}
+
+#header-content {
+    background-color: rgba(48,60,92,0.2);
 }

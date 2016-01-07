@@ -108,7 +108,8 @@
 
     var navState;
     var setMenu = function() {
-        if (scrollPos > windowInnerHeight && (navState == 'up' | !!!navState)) {
+        if (!!!navTop) return;
+        if (scrollPos >= windowInnerHeight && (navState == 'up' | !!!navState)) {
             navState = 'down';
             navTop.classList.add('nav-up');
         } else if (scrollPos < windowInnerHeight && (navState == 'down' | !!!navState)) {
@@ -141,12 +142,12 @@
             var limit = siteContentHeight - windowInnerHeight * 2;
             if (scrollPos >= limit) {
                 var amount = scrollPos - limit;
-                footer.style.transform = 'translate3d(0,' + ((windowInnerHeight - amount) * 0.7) + 'px,0)';
-                navFooter.style.transform = 'translate3d(0,' + ((windowInnerHeight - amount) * 1.5) + 'px,0)';
+                if (!!footer) footer.style.transform = 'translate3d(0,' + ((windowInnerHeight - amount) * 0.7) + 'px,0)';
+                if (!!navFooter) navFooter.style.transform = 'translate3d(0,' + ((windowInnerHeight - amount) * 1.5) + 'px,0)';
                 if (!footerVisible) footerVisible = true;
             } else if (footerVisible) {
                 footerVisible = false;
-                footer.style.transform = 'translate3d(0,' + windowInnerHeight + 'px,0)';
+                if (!!footer) footer.style.transform = 'translate3d(0,' + windowInnerHeight + 'px,0)';
             }
 
             var cur = undefined,
@@ -162,12 +163,12 @@
 
             if (!!obj && obj != wayPointObject) {
                 if (!!wayPointObject) {
-                    wayPointObject.waypoint.classList.remove('active');
-                    wayPointObject.menu.classList.remove('active');
+                    if (!!wayPointObject.waypoint) wayPointObject.waypoint.classList.remove('active');
+                    if (!!wayPointObject.menu) wayPointObject.menu.classList.remove('active');
                 }
                 wayPointObject = obj;
-                wayPointObject.waypoint.classList.add('active');
-                wayPointObject.menu.classList.add('active');
+                if (!!wayPointObject.waypoint) wayPointObject.waypoint.classList.add('active');
+                if (!!wayPointObject.menu) wayPointObject.menu.classList.add('active');
             }
         });
     };
@@ -203,7 +204,7 @@
         [].forEach.call(document.querySelectorAll('[data-scroll]'), function(item) {
             item.addEventListener('click', function(event) {
                 event.preventDefault();
-                scrollToTop(1500, document.querySelector(item.hash || item.dataset.scroll), (item.hash || item.dataset.scroll) == '#home' ? 0 : 150);
+                scrollToTop(1000, document.querySelector(item.hash || item.dataset.scroll), (item.hash || item.dataset.scroll) == '#home' ? 0 : 1);
             });
         });
     });
