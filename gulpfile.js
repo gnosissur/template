@@ -50,12 +50,16 @@ gulp.task('copy', function(force) {
 gulp.task('html', function(force) {
     return gulp.src(['*.html', '**/*.html', ignore], { base: './' })
         /*.pipe(plugins.if(!force, plugins.changed('build')))*/
+        .pipe(plugins.htmlReplace({
+            'js': '/js/site.min.js'
+        }))
         .pipe(gulp.dest('build'));
 });
 
 gulp.task('js', function(force) {
-    return gulp.src(['*.js', '!gulpfile.js'], { base: './' })
+    return gulp.src(['*.js', '**/*.js', '!gulpfile.js', ignore], { base: './' })
         .pipe(plugins.if(!force, plugins.changed('build')))
+        .pipe(plugins.concat('js/site.min.js'))
         .pipe(plugins.uglify())
         .pipe(gulp.dest('build'))
 });
@@ -79,8 +83,8 @@ gulp.task('default', ['copy', 'js', 'css', 'html', 'img'], function(lean) {
                 inline: true,
                 css: ['build/site.css'],
                 minify: true,
-                width: 900,
-                height: 400,
+                width: 300,
+                height: 300,
                 ignore: [/url\(/,'@font-face',/print/,'mobile.css']
             }))
             .pipe(gulp.dest('./build'));

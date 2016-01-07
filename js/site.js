@@ -1,5 +1,5 @@
 (function() {
-
+    
     var wayPointObject, timeout, siteContentHeight, showcaseInterval,
         showCaseFade = 6000,
         headerOffset = 150,
