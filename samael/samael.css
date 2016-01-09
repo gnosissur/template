@@ -2,23 +2,45 @@ header {
     background-color: #747474;
 }
 
-#header-content-centered {
+#header-content-centered-1, #header-content-centered-2 {
     position: absolute;
     transform: translate3d(0,-50%,0);
-    top: 50%;
-    left: 45%;
+    top: 70%;
     width: 400px;
+    height: 250px;
+}
+
+#header-content-centered-1 {
+    left: 60%;
+}
+
+#header-content-centered-2 {
+    right: 40%;
+    display: inline-block;
+    font-size: 2em;
 }
 
 h1.title, div.sub-title-secondary {
     text-align: left;
-    margin-top: 0;
+    margin: 0;
     display: initial;
-    background-color: black;
 }
 
 div.sub-title-secondary {
-    line-height: 0;
+    line-height: 1em;
+    text-align: right;
+    margin: 0;
+    display: block;
+    font-size: 1em;
+}
+
+div.sub-title-secondary > span {
+    background-color: black;
+}
+
+h1.title {
+    font-size: 5vw;
+    background-color: rgba(247, 58, 70, 0.6);
 }
 
 h1.title:before {
