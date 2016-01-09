@@ -213,11 +213,21 @@ header {
     z-index: 500;
 }
 
+.header-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .header-slider {
     position: absolute;
     width: 100%;
     height: 100%;
-    margin-left: 0%;
+    margin-left: 0;
 }
 
 .header-slider > div {
