@@ -31,7 +31,7 @@ gulp.task('serve', function(live, build, open) {
 gulp.task('img', function(force) {
     var pngquant = require('imagemin-pngquant');
     var imageminJpegRecompress = require('imagemin-jpeg-recompress');
-    return gulp.src(['*.{jpg,png,gif}', 'images/**/*.{jpg,png,gif}'], { base: './' })
+    return gulp.src(['*.{jpg,png,gif}', '**/*.{jpg,png,gif}', ignore], { base: './' })
         .pipe(plugins.if(!force, plugins.changed('build')))
         .pipe(plugins.imagemin({
             progressive: true,
