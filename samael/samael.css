@@ -40,7 +40,7 @@ div.sub-title-secondary > span {
 
 h1.title {
     background-color: rgba(247, 58, 70, 0.6);
-    line-height: initial;
+    line-height: 1em;
 }
 
 h1.title:before {
