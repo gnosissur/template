@@ -27,7 +27,7 @@ h1.title, div.sub-title-secondary {
 }
 
 div.sub-title-secondary {
-    line-height: 1em;
+    line-height: normal;
     text-align: right;
     margin: 0;
     display: block;
@@ -39,8 +39,8 @@ div.sub-title-secondary > span {
 }
 
 h1.title {
-    background-color: rgba(247, 58, 70, 0.6);
-    line-height: 1em;
+    background-color: #F73A46;
+    line-height: normal;
 }
 
 h1.title:before {
