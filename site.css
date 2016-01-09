@@ -213,13 +213,14 @@ header {
     z-index: 500;
 }
 
-#header-slider {
+.header-slider {
+    position: absolute;
     width: 100%;
     height: 100%;
     margin-left: 0%;
 }
 
-#header-slider > div {
+.header-slider > div {
     opacity: 0;
     position: absolute;
     width: 100%;
@@ -230,7 +231,7 @@ header {
     background-position: center;
 }
 
-#header-slider > div:nth-child(1) {
+.header-slider > div:nth-child(1) {
     opacity: 1;
 }
 

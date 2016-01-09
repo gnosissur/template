@@ -20,20 +20,16 @@ window.cancelIdleCallback =
 
 (function() {
 
-    var wayPointObject, timeout, siteContentHeight, showcaseInterval,
-        showCaseFade = 6000,
+    var wayPointObject, timeout, siteContentHeight,
         headerOffset = 150,
         windowInnerHeight = 0,
         scrollPos = 0,
-        currentImage = 0,
         wayPoints = {};
 
     var header = document.querySelector('header'),
         headerContent = document.querySelector('#header-content'),
         headerSlider = document.querySelector('#header-slider'),
         banner = document.querySelector('#banner'),
-        slides = document.querySelectorAll('#header-slider > div'),
-        captions = document.querySelectorAll('#header-slider > div .caption'),
         content = document.querySelector('article'),
         wrapper = document.querySelector('#wrapper'),
         nav = document.querySelector('nav'),
@@ -41,6 +37,16 @@ window.cancelIdleCallback =
         navFooter = document.querySelector('footer > div.notes'),
         footer = document.querySelector('footer'),
         main = document.querySelector('main');
+
+    var sliders = document.querySelectorAll('.header-slider');
+    var interval = 4000, count = 1;
+    [].forEach.call(sliders, function(slider) {
+        slider.slides = slider.querySelectorAll('.header-slider > div');
+        slider.captions = slider.querySelectorAll('.header-slider > div .caption');
+        slider.currentImage = 0;
+        slider.showcaseInterval = undefined;
+        slider.showcaseFade = interval + (count++ * 1000);
+    });
 
     var debounce = function(func, wait, immediate) {
         var timeout;
@@ -97,33 +103,32 @@ window.cancelIdleCallback =
         currentFrame = requestAnimationFrame(step);
     }
 
-    var runShowCase = function(first) {
-        if (slides.length > 1) {
+    var runShowCase = function(slider) {
+        if (slider.slides.length > 1) {
             requestAnimationFrame(function() {
-                if (!!first) {
-                    captions[0].classList.add('caption-up');
-                    slides[0].style.opacity = 1;
-                } else {
-                    for (var i = 0; i < slides.length; i++) {
-                        slides[i].style.opacity = 0;
-                        captions[i].classList.remove('caption-up');
+
+                    for (var i = 0; i < slider.slides.length; i++) {
+                        slider.slides[i].style.opacity = 0;
+                        if (slider.captions.length > 1) slider.captions[i].classList.remove('caption-up');
                     }
-                    currentImage = (currentImage != slides.length - 1) ? currentImage + 1 : 0;
-                    slides[currentImage].style.opacity = 1;
-                    captions[currentImage].classList.add('caption-up');
-                }
+                    slider.currentImage = (slider.currentImage != slider.slides.length - 1) ? slider.currentImage + 1 : 0;
+                    slider.slides[slider.currentImage].style.opacity = 1;
+                    if (slider.captions.length > 1) slider.captions[slider.currentImage].classList.add('caption-up');
+
             });
         }
     }
 
     var resetShowcaseInterval = function() {
-        if (slides.length > 1) {
-            if (showcaseInterval)
-                clearInterval(showcaseInterval);
-            showcaseInterval = setInterval(function() {
-                runShowCase();
-            }, showCaseFade);
-        }
+        [].forEach.call(sliders, function(slider) {
+            if (slider.slides.length > 1) {
+                if (slider.showcaseInterval)
+                    clearInterval(slider.showcaseInterval);
+                slider.showcaseInterval = setInterval(function() {
+                    runShowCase(slider);
+                }, slider.showcaseFade);
+            }
+        });
     };
 
     var navState;
@@ -205,7 +210,7 @@ window.cancelIdleCallback =
         stretchHeader();
         onScroll();
         resetShowcaseInterval();
-        runShowCase();
+        [].forEach.call(sliders, function(slider) { runShowCase(slider) });
         setMenu();
 
         window.addEventListener('resize', function() {

@@ -14,11 +14,16 @@ h1.title, div.sub-title-secondary {
     text-align: left;
     margin-top: 0;
     display: initial;
-    background-color: black;
+    line-height: initial;
+}
+
+h1.title {
+    background-color: rgba(247, 58, 70, 0.8);
 }
 
 div.sub-title-secondary {
-    line-height: 0;
+    background-color: rgba(0,0,0,0.8);
+    position: relative;
 }
 
 h1.title:before {
