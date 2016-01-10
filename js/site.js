@@ -24,7 +24,7 @@ window.mobileAndTabletcheck = function() {
 
 (function() {
 
-    if (typeof loadCss !== 'undefined' && mobileAndTabletcheck()) loadCss('/mobile.css', document.getElementById("loadcss"));
+    if (typeof loadCSS !== 'undefined' && mobileAndTabletcheck()) loadCSS('/mobile.css', document.getElementById("loadcss"));
 
     var wayPointObject, timeout, siteContentHeight,
         headerOffset = 150,
