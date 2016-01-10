@@ -174,7 +174,7 @@ window.mobileAndTabletcheck = function() {
                 header.style.transform = 'translate3d(0,' + -windowInnerHeight + 'px,0)';
             }
 
-            var limit = siteContentHeight - windowInnerHeight * 2;
+            var limit = main.clientHeight - windowInnerHeight * 2;
             if (scrollPos >= limit) {
                 var amount = scrollPos - limit;
                 if (!!footer) footer.style.transform = 'translate3d(0,' + ((windowInnerHeight - amount) * 0.7) + 'px,0)';

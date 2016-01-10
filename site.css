@@ -251,7 +251,7 @@ header {
     position: relative;
     top: 50%;
     top: calc(50%);
-    transform: translateY(-50%);
+    transform:translate3d(0,-50%,0);
 }
 
 header .brand {
@@ -623,9 +623,9 @@ section > blockquote {
     line-height: 1.35em;
     text-transform: uppercase;
     transform: scale(1.05, 0.85);
-    margin-top: 50px;
-    margin-left: 50px;
-    margin-bottom: 70px;
+    margin-top: 1.5em;
+    margin-left: 1.5em;
+    margin-bottom: 2.325em;
     white-space: nowrap;
 }
 
