@@ -27,7 +27,7 @@ var map, locations = [
     ['Corintos', '', '(+30) 6978783208', '', '', 37.943119, 22.931942, '/images/pin_orange.png'],
 
     // Italy
-    ['Sordevolo (Biella)', 'Templo de curacion, Lumisial Uriel', '(+39) 320 3555985', 'biella@gnostico.it', '', 45.575964, 7.973140, '/images/pin.png'],
+    ['Sordevolo (Biella)', 'Templo de curacion, Lumisial Uriel', '(+39) 320 3555985', 'biella@gnostico.it', '', 45.575964, 7.973140, '/images/pin_pulse.png'],
     ['Milano', 'Lumisial Kether', '(+39) 335 7089301', 'milano@gnostico.it', '', 45.466691, 9.185928, '/images/pin.png'],
     ['Bergamo', 'Lumisial Rafael', '(+39) 348 2608030', 'bergamo@gnostico.it', '', 45.700322, 9.676909, '/images/pin.png'],
     ['Genova', 'Lumisial Lakhsmi', '(+39) 392 3439236', 'genova@gnostico.it', '', 44.408580, 8.947434, '/images/pin.png'],
@@ -146,7 +146,7 @@ function createMap() {
             link = "http://" + web;
         else
             link = web;
-        if (i > 0) markers.push(marker);
+        if (markericon !== '/images/pin_pulse.png') markers.push(marker);
         bindInfoWindow(marker, map, locations[i][0], description, telephone, email, web, link);
     }
 
