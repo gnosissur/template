@@ -328,27 +328,28 @@ section > div.bio {
     position: relative;
 }
 
-section > div.bio:before {
-    content: '';
-    height: 100%;
-    width: 1px;
-    background-color: rgba(247, 58, 70, 0.3);
-    position: absolute;
-    top: 0;
-    left: -50px;
-}
-
 section > div.bio:after {
     content: '';
     height: 100%;
     width: 1px;
     background-color: rgba(247, 58, 70, 0.3);
     position: absolute;
-    top: 0;
+    top: 10px;
+    left: -45px;
+}
+
+section > div.bio:before {
+    content: '';
+    height: 100%;
+    width: 1px;
+    background-color: rgba(247, 58, 70, 0.3);
+    position: absolute;
+    top: 20px;
     right: -50px;
 }
 
-section > div.bio > p {
+section > div.bio > p, section > div.bio > div {
+    position: relative;
     margin-bottom: 1.875em;
     line-height: 1.75em;
     padding: 0 0.9375em;
@@ -360,12 +361,12 @@ section > div.bio > p {
     line-height: 1.5em;
 }
 
-section > div.bio > p > span {
+section > div.bio > p > span, section > div.bio > div > span {
     margin-left: -20px;
     position: relative;
 }
 
-section > div.bio > p > span:after {
+section > div.bio > p > span:after, section > div.bio > div > span:after  {
     content: '';
     height: 1px;
     width: 55px;
@@ -373,6 +374,16 @@ section > div.bio > p > span:after {
     position: absolute;
     bottom: 0;
     left: -55px;
+}
+
+section > div.bio > p:before, section > div.bio > div:before  {
+    content: '';
+    height: 1px;
+    width: 50%;
+    background-color: rgba(247, 58, 70, 0.3);
+    position: absolute;
+    bottom: -10px;
+    right: -60px;
 }
 
 section a {
