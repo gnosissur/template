@@ -93,7 +93,7 @@ function bindInfoWindow(marker, map, title, desc, telephone, email, web, link) {
 }
 
 function initMap() {
-    requestIdleCallback(createMap);
+    requestIdleCallback(createMap, {timeout: 1000});
 }
 
 function createMap() {
@@ -163,11 +163,9 @@ function createMap() {
     });
 }
 
-requestIdleCallback(function() {
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.23&callback=initMap';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-});
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = 'https://maps.googleapis.com/maps/api/js?v=3.23&callback=initMap';
+script.async = true;
+script.defer = true;
+document.body.appendChild(script);
