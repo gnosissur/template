@@ -57,7 +57,7 @@ gulp.task('html', function(force) {
 });
 
 gulp.task('js', function(force) {
-    return gulp.src(['*.js', '**/*.js', '!gulpfile.js', ignore], { base: './' })
+    return gulp.src(['js/*.js', '!gulpfile.js', ignore], { base: './' })
         .pipe(plugins.if(!force, plugins.changed('build')))
         .pipe(plugins.concat('js/site.min.js'))
         .pipe(plugins.uglify())
