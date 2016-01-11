@@ -1,7 +1,7 @@
 #header-content-centered {
-    position: absolute;
-    transform: initial;
-    top: 100px;
+    position: absolute!important;
+    transform: initial!important;
+    top: 100px!important;
     right: 100px;
     width: 400px;
 }
