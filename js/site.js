@@ -210,7 +210,7 @@ window.mobileAndTabletcheck = function() {
         if (!!wayPointObject.menu) wayPointObject.menu.classList.add('active');
 
         // Just in case
-        requestIdleCallback(function() {
+        requestAnimationFrame(function() {
           siteContentHeight = main.clientHeight;
         });
       }

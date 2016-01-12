@@ -36,7 +36,6 @@ gulp.task('img', function(force) {
     var imageminJpegRecompress = require('imagemin-jpeg-recompress');
     return gulp.src(['*.{jpg,png,gif}', '**/*.{jpg,png,gif}', ignore], { base: './' })
         .pipe(plugins.if(!force, plugins.changed('build')))
-        .pipe(plugins.print())
         .pipe(plugins.imagemin({
             progressive: true,
             optimizationLevel: 5,
@@ -48,14 +47,12 @@ gulp.task('img', function(force) {
 gulp.task('copy', function(force) {
     return gulp.src(['*.md', 'fonts/*', ignore], { base: './' })
         /*.pipe(plugins.if(!force, plugins.changed('build')))*/
-        .pipe(plugins.print())
         .pipe(gulp.dest('build'))
 });
 
 gulp.task('html', function(force) {
     return gulp.src(['*.html', '**/*.html', ignore], { base: './' })
         /*.pipe(plugins.if(!force, plugins.changed('build')))*/
-        .pipe(plugins.print())
         .pipe(plugins.htmlReplace({
             'js': '/js/site.min.js'
         }))
@@ -63,7 +60,7 @@ gulp.task('html', function(force) {
 });
 
 gulp.task('js', function(force) {
-    var files = bower().concat(['js/*.js', '!gulpfile.js', ignoreIncludeBower]);
+    var files = bower().concat(['js/site.js', 'js/plugins.js', '!gulpfile.js', ignoreIncludeBower]);
     return gulp.src(files, { base: './' })
         .pipe(plugins.print())
         .pipe(plugins.if(!force, plugins.changed('build')))
@@ -75,7 +72,6 @@ gulp.task('js', function(force) {
 gulp.task('css', function(force) {
     return gulp.src(['*.css', '**/*.css', ignore], { base: './' })
         /*.pipe(plugins.if(!force, plugins.changed('build')))*/
-        .pipe(plugins.print())
         .pipe(plugins.autoprefixer())
         .pipe(plugins.csso())
         .pipe(gulp.dest('build'));
@@ -85,7 +81,6 @@ gulp.task('crtical', function() {
     var critical = require('critical').stream;
     return gulp.src(['build/*.html', 'build/**/*.html'], { base: './build' })
         /*.pipe(plugins.if(!force, plugins.changed('build')))*/
-        .pipe(plugins.print())
         .pipe(plugins.inlineSource())
         .pipe(critical({
             base: './build',
