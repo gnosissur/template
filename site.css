@@ -46,7 +46,7 @@ body > nav.title {
     text-transform: uppercase;
     font-size: 0.875em;
     line-height: 0.875em;
-    letter-spacing: 0em;
+    letter-spacing: 0;
     will-change: transform;
     box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.4);
     opacity:0.9;
@@ -321,7 +321,6 @@ article > section > blockquote {
     letter-spacing: 0.1em;
     line-height: 1.35em;
     text-transform: uppercase;
-    transform: scale(1.05, 0.85);
     margin-top: 1.5em;
     margin-left: 1.5em;
     margin-bottom: 2.325em;
@@ -505,12 +504,16 @@ article > section.short-tail { padding-bottom: 5em; }
 article > section.no-tail { padding-bottom: 0em; }
 article > section.full, article > footer { padding: 0; }
 
-article > section > blockquote > span.indent {
+article > section > blockquote div.shrink {
+    transform: scale(1.05, 0.85);
+}
+
+article > section > blockquote span.indent {
     display: inline-block;
     width: 1.5em;
 }
 
-article > section > blockquote > span.small {
+article > section > blockquote span.small {
     font-family: Akzidenz-Grotesk, sans-serif;
     font-size: 0.55em;
     letter-spacing: 0.35em;

@@ -1,0 +1,20 @@
+{
+  "name": "gnosissur",
+  "version": "0.0.0",
+  "homepage": "https://github.com/gnosissur/template",
+  "authors": [
+    "Paul Henschel <drcmda@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "scrollreveal": "~3.0.6",
+    "js-marker-clusterer": "googlemaps/js-marker-clusterer#gh-pages"
+  }
+}
