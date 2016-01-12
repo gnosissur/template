@@ -559,7 +559,7 @@ article > section > blockquote span.small {
 }
 
 .hidden {
-    display: none;
+    visibility: hidden;
 }
 
 .super {

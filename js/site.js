@@ -1,6 +1,3 @@
-if (typeof ScrollReveal !== 'undefined')
-    ScrollReveal().reveal('#header-brand, #header-content .title, #header-content .sub-title-secondary, article > section > blockquote, .quote-wrapper, .quote-wrapper-left, .quote-wrapper-right, div.bio > div.image > div.figure');
-
 window.requestIdleCallback = window.requestIdleCallback ||
 function(callback) {
   var start = Date.now();
