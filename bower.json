@@ -14,6 +14,7 @@
     "tests"
   ],
   "dependencies": {
-    "js-marker-clusterer": "googlemaps/js-marker-clusterer#gh-pages"
+    "js-marker-clusterer": "googlemaps/js-marker-clusterer#gh-pages",
+    "scrollreveal": "~3.0.6"
   }
 }

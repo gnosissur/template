@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Gotham-Medium';
+  src: url('/fonts/Gotham-Medium.eot');
+  src: local('☺'),
+        url('/fonts/Gotham-Medium.woff2') format('woff2'),
+        url('/fonts/Gotham-Medium.woff') format('woff'),
+        url('/fonts/Gotham-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Akzidenz-Grotesk';
+  src: url('/fonts/Akzidenz-Grotesk-BE-Condensed.eot');
+  src: local('☺'),
+        url('/fonts/Akzidenz-Grotesk-BE-Condensed.woff2') format('woff2'),
+        url('/fonts/Akzidenz-Grotesk-BE-Condensed.woff') format('woff'),
+        url('/fonts/Akzidenz-Grotesk-BE-Condensed.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Worldwide-Headline';
+  src: url('/fonts/Gotham-Medium.eot');
+  src: local('☺'),
+        url('/fonts/Worldwide-Headline-Bold.woff2') format('woff2'),
+        url('/fonts/Worldwide-Headline-Bold.woff') format('woff'),
+        url('/fonts/Worldwide-Headline-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Exchange SSm 4r';
+  src: url('/fonts/Exchange.eot');
+  src: local('☺'),
+        url('/fonts/Exchange.woff2') format('woff2'),
+        url('/fonts/Exchange.woff') format('woff'),
+        url('/fonts/Exchange.ttf') format('truetype');
+}

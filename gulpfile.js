@@ -61,12 +61,17 @@ gulp.task('html', function(force) {
 
 gulp.task('js', function(force) {
     var files = bower().concat(['js/site.js', 'js/plugins.js', '!gulpfile.js', ignoreIncludeBower]);
-    return gulp.src(files, { base: './' })
-        .pipe(plugins.print())
-        .pipe(plugins.if(!force, plugins.changed('build')))
-        .pipe(plugins.concat('js/site.min.js'))
-        .pipe(plugins.uglify())
-        .pipe(gulp.dest('build'))
+    return merge(
+        gulp.src(files, { base: './' })
+            .pipe(plugins.if(!force, plugins.changed('build')))
+            .pipe(plugins.concat('js/site.min.js'))
+            .pipe(plugins.uglify())
+            .pipe(gulp.dest('build')),
+        gulp.src(['css/*.js', 'fonts/*.js'], { base: './' })
+            .pipe(plugins.if(!force, plugins.changed('build')))
+            .pipe(plugins.uglify())
+            .pipe(gulp.dest('build'))
+    );
 });
 
 gulp.task('css', function(force) {
@@ -85,7 +90,7 @@ gulp.task('crtical', function() {
         .pipe(critical({
             base: './build',
             inline: true,
-            css: ['build/site.css'],
+            css: ['build/css/site.css'],
             minify: true,
             width: 300,
             height: 300,
@@ -94,6 +99,13 @@ gulp.task('crtical', function() {
         .pipe(gulp.dest('./build'));
 });
 
+gulp.task('inline', function() {
+    return gulp.src(['build/*.html', 'build/**/*.html'], { base: './build' })
+        /*.pipe(plugins.if(!force, plugins.changed('build')))*/
+        .pipe(plugins.inlineSource())
+        .pipe(gulp.dest('./build'));
+});
+
 gulp.task('default', function() {
-    sequence(['copy', 'js', 'css', 'html', 'img'], 'crtical');
+    sequence(['copy', 'js', 'css', 'html', 'img'], 'inline');
 });
