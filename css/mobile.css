@@ -88,5 +88,14 @@ body > nav.waypoints, nav.title {
 div.quote-wrapper-right > .author, div.quote-wrapper-left > .author { float: initial; left: initial; }
 
 .cite, .author, section > blockquote {
-    font-size: 1.8em;
+    font-size: 1.8em!important;
+}
+
+article > section > div.bio {
+    padding: 0 5%;
+}
+
+div.bio > div.image > div.figure {
+    right: -10px!important;
+    width: 150px!important;
 }
