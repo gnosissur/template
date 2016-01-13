@@ -218,23 +218,22 @@ window.mobileAndTabletcheck = function() {
     });
   };
 
-  document.addEventListener('DOMContentLoaded', function() {
-    windowInnerHeight = window.innerHeight;
-    scrollPos = window.scrollY;
+  windowInnerHeight = window.innerHeight;
+  siteContentHeight = main.clientHeight;
+  scrollPos = window.scrollY;
 
-    stretchHeader();
-    onScroll();
+  stretchHeader();
+  onScroll();
 
-    window.addEventListener('wheel', function() {
-      if (!!links.frame) {
-        cancelAnimationFrame(links.frame);
-        links.frame = null;
-      }
-    });
-
-    window.onload = stretchHeader;
-    window.addEventListener('resize', stretchHeader);
-    window.addEventListener('scroll', onScroll);
+  window.addEventListener('wheel', function() {
+    if (!!links.frame) {
+      cancelAnimationFrame(links.frame);
+      links.frame = null;
+    }
   });
+
+  window.onload = stretchHeader;
+  window.addEventListener('resize', stretchHeader);
+  window.addEventListener('scroll', onScroll);
 
 })();

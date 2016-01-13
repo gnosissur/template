@@ -1,7 +1,7 @@
 WebFontConfig = {
     custom: {
         families: ['Gotham-Medium'],
-        urls: ['/fonts/fonts.css', '/fonts/font-awesome.min.css']
+        urls: ['/fonts/fonts.css', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css']
     },
     google: {
         families: ['Open Sans:400']

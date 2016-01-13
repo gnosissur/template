@@ -325,14 +325,6 @@ article > section > blockquote span.small {
 }
 /* ------------------------------------------------------- Typography & section styles */
 
-.gradient, .gradient-thick {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(335deg, rgba(161, 3, 75, 0.3), rgba(21, 157, 126, 0.3));
-}
-
 .gradient-thick {
     background: linear-gradient(335deg, rgba(90, 8, 46, 0.6), rgba(23, 90, 74, 0.6));
 }
@@ -384,16 +376,6 @@ article > section > blockquote span.small {
     font-size: 24px;
     font-family: "Gotham-Medium", sans-serif;
     text-transform: uppercase;
-}
-
-h1.title {
-    margin-bottom: 0.5em;
-}
-
-h1.title:before {
-    width: 1em;
-    margin-left: -0.5em;
-    bottom: -0.3em;
 }
 
 .title-main, .title-footer, title-secondary, .title-sub {

@@ -54,7 +54,7 @@ gulp.task('html', function(force) {
     return gulp.src(['*.html', '**/*.html', ignore], { base: './' })
         /*.pipe(plugins.if(!force, plugins.changed('build')))*/
         .pipe(plugins.htmlReplace({
-            'js': '/js/site.min.js'
+            'js': { src: null, tpl: '<script async src="/js/site.min.js"></script>' }
         }))
         .pipe(gulp.dest('build'));
 });
