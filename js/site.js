@@ -180,9 +180,9 @@ window.mobileAndTabletcheck = function() {
       if (!!footer) {
         var limit = siteContentHeight - windowInnerHeight * 2;
         if (scrollPos >= limit) {
-          var amount = scrollPos - limit;
-          footer.style.transform = 'translate3d(0,' + ((windowInnerHeight - amount) * 0.7) + 'px,0)';
-          navFooter.style.transform = 'translate3d(0,' + ((windowInnerHeight - amount) * 1.5) + 'px,0)';
+          var amount = Math.max(0, windowInnerHeight - (scrollPos - limit));
+          footer.style.transform = 'translate3d(0,' + (amount * 0.7) + 'px,0)';
+          navFooter.style.transform = 'translate3d(0,' + (amount * 1.2) + 'px,0)';
           if (!footerVisible) footerVisible = true;
         } else if (footerVisible) {
           footerVisible = false;

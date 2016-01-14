@@ -6,14 +6,36 @@ a { text-decoration: none; color: inherit; }
 .clearfix { *zoom: 1; }
 /* ------------------------------------------------------------------------ HTML reset */
 
-body > nav.title > ul {
+nav {
+    position: absolute;
+    text-align: center;
+}
+
+nav.title {
+    z-index: 2000;
+    overflow:hidden;
+    transition: all 0.2s ease-out;
+    transform: translate3d(0,-5em,0);
+    backface-visibility: hidden;
+    text-align: center;
+    background-color: white;
+    font-family: 'Gotham-Medium', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.875em;
+    line-height: 0.875em;
+    letter-spacing: 0;
+    will-change: transform;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.4);
+}
+
+nav.title > ul {
     height: 100%;
     position: relative;
     display: inline-block;
     white-space: nowrap;
 }
 
-body > nav.title > ul > li {
+nav.title > ul > li {
     height: 100%;
     float: left;
     padding-left: 2em;
@@ -24,22 +46,22 @@ body > nav.title > ul > li {
     font-weight: normal;
 }
 
-body > nav.title > ul > li > a {
+nav.title > ul > li > a {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-body > nav.title > a:hover, body > nav.title > ul > li > a:hover {
+nav.title > a:hover, nav.title > ul > li > a:hover {
     box-shadow: inset 0 -0.1875em 0 0 #676767;
 }
 
-body > nav.title > ul > li > a.active {
+nav.title > ul > li > a.active {
     box-shadow: inset 0 -0.1875em 0 0 #f9333f!important;
 }
 
-body > nav.title > a, body > nav.title > span {
+nav.title > a, nav.title > span {
     position: absolute;
     top: 0;
     margin-left: 50px;
@@ -50,15 +72,19 @@ body > nav.title > a, body > nav.title > span {
     align-items: center;
 }
 
-body > nav.nav-up {
+nav.title > a > i {
+    padding-right: 15px;
+}
+
+nav.nav-up {
     transform: translate3d(0,0,0)!important;
 }
 
-body > nav.waypoints a.active {
+nav.waypoints a.active {
     background-color: #F73A46;
 }
 
-body > nav.waypoints a:hover {
+nav.waypoints a:hover {
     background-color: #F73A46;
     color: #fff;
     width: 120px;
@@ -66,12 +92,12 @@ body > nav.waypoints a:hover {
     height: 24px;
 }
 
-body > nav.waypoints a:hover p {
+nav.waypoints a:hover p {
     opacity: 1;
     transition: opacity 0.25s 0.25s
 }
 
-body > nav.waypoints a p {
+nav.waypoints a p {
     color: #fff;
     line-height: 24px;
     margin: 0;
@@ -79,7 +105,7 @@ body > nav.waypoints a p {
     text-transform: uppercase;
 }
 
-article > figure, article > section, main > footer, article > footer {
+article > figure, section, main > footer, article > footer {
     position: relative;
     font-family: 'Open Sans', sans-serif;
     overflow: hidden;
@@ -94,14 +120,14 @@ main > article {
     z-index: 1000;
 }
 
-article > section {
+section {
     padding: 0 20%;
     padding-top: 12em;
     padding-bottom: 8em;
 }
 
-article > section:nth-of-type(even) {background-color: #F8F8F8;}
-article > section:nth-of-type(odd) {background-color: white;}
+section:nth-of-type(even) {background-color: #F8F8F8;}
+section:nth-of-type(odd) {background-color: white;}
 
 article > figure {
     padding: 0;
@@ -112,7 +138,7 @@ article > figure {
     color: white;
 }
 
-article > section > p {
+section > p {
     margin-bottom: 1.875em;
     line-height: 1.75em;
     padding: 0 0.9375em;
@@ -124,12 +150,12 @@ article > section > p {
     line-height: 1.6em;
 }
 
-article > section a {
+section a {
     position: relative;
     white-space: nowrap;
 }
 
-article > section a:before {
+section a:before {
     content: '';
     position: absolute;
     bottom: -10%;
@@ -139,11 +165,11 @@ article > section a:before {
     background-color: rgba(58, 195, 247, 0.3);
 }
 
-article > section a:hover:before {
+section a:hover:before {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-article > section > p:first-of-type::first-letter {
+section > p:first-of-type::first-letter {
     float: left;
     margin: 18px 10px 0px 0px;
     font-weight: 400;
@@ -152,27 +178,25 @@ article > section > p:first-of-type::first-letter {
     font-weight: 600;
 }
 
-article > section > h4+p {
+section > h4+p {
     margin-top: 4em;
 }
 
-article > section > blockquote {
+section > blockquote {
     font-family: Worldwide-Headline, serif;
     font-size: 2.25em;
     letter-spacing: 0.1em;
     line-height: 1.35em;
     text-transform: uppercase;
-    margin-top: 1.5em;
+    margin-top: 1em;
     margin-left: 1.5em;
-    margin-bottom: 2.325em;
+    margin-bottom: 2em;
     white-space: nowrap;
 }
 
-article > section > blockquote:after {
+section > blockquote:after {
     content: '';
     position: absolute;
-    bottom: -20px;
-    left: 0;
     width: 320px;
     height: 1px;
     background-color: #F73A46;
@@ -189,7 +213,7 @@ main > footer {
     top: 0;
 }
 
-footer > div.map, article > section > div.map {
+footer > div.map, section > div.map {
     width: 100%;
     height: 100%;
 }
@@ -299,22 +323,22 @@ footer.small {
     height: initial!important;
 }
 
-article > section.short-head { padding-top: 5em; }
-article > section.no-head { padding-top: 0em; }
-article > section.short-tail { padding-bottom: 5em; }
-article > section.no-tail { padding-bottom: 0em; }
-article > section.full, article > footer { padding: 0; }
+section.short-head { padding-top: 5em; }
+section.no-head { padding-top: 0em; }
+section.short-tail { padding-bottom: 5em; }
+section.no-tail { padding-bottom: 0em; }
+section.full, article > footer { padding: 0; }
 
-article > section > blockquote div.shrink {
+section > blockquote div.shrink {
     transform: scale(1.05, 0.85);
 }
 
-article > section > blockquote span.indent {
+section > blockquote span.indent {
     display: inline-block;
     width: 1.5em;
 }
 
-article > section > blockquote span.small {
+section > blockquote span.small {
     font-family: Akzidenz-Grotesk, sans-serif;
     font-size: 0.55em;
     letter-spacing: 0.35em;

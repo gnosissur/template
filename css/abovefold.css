@@ -26,33 +26,14 @@ body {
     font-size: 100%;
 }
 
-body > nav {
-    position: absolute;
-    text-align: center;
-}
-
-body > nav.title {
+nav.title {
     position: fixed;
-    z-index: 2000;
     width: 100%;
     height: 3.125em;
-    overflow:hidden;
-    transition: all 0.2s ease-out;
     transform: translate3d(0,-5em,0);
-    backface-visibility: hidden;
-    text-align: center;
-    background-color: white;
-    font-family: 'Gotham-Medium', sans-serif;
-    text-transform: uppercase;
-    font-size: 0.875em;
-    line-height: 0.875em;
-    letter-spacing: 0;
-    will-change: transform;
-    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.4);
-    opacity:0.9;
 }
 
-body > nav.waypoints {
+nav.waypoints {
     right: 50px;
     position: fixed;
     top: 50%;
@@ -64,7 +45,7 @@ body > nav.waypoints {
     font-size: 12px;
 }
 
-body > nav.waypoints a {
+nav.waypoints a {
     background-color: #d0d0d0;
     clear: right;
     color: #fff;
@@ -202,7 +183,7 @@ h1.title {
 h1.title:before {
     width: 1em;
     margin-left: -0.5em;
-    bottom: -0.3em;
+    bottom: -0.2em;
 }
 
 .sub-title, .sub-title-secondary {
