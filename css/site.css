@@ -150,6 +150,11 @@ section > p {
     line-height: 1.6em;
 }
 
+section > p.two-column {
+    column-count: 2;
+    -webkit-column-count: 2;
+}
+
 section a {
     position: relative;
     white-space: nowrap;
