@@ -19,6 +19,7 @@ nav.title {
     backface-visibility: hidden;
     text-align: center;
     background-color: white;
+    color: black;
     font-family: 'Gotham-Medium', sans-serif;
     text-transform: uppercase;
     font-size: 0.875em;
@@ -122,7 +123,7 @@ main > article {
 
 section {
     padding: 0 20%;
-    padding-top: 12em;
+    padding-top: 10em;
     padding-bottom: 8em;
 }
 
@@ -223,7 +224,7 @@ footer > div.map, section > div.map {
     height: 100%;
 }
 
-div.map .gm-style > div.gmnoprint { top:60px; left: 20px; bottom: initial!important; }
+div.map .gm-style > div.gmnoprint { top: 20px; left: 20px; bottom: initial!important; }
 div.map .gm-style-cc { display:none; }
 div.map .gm-style-iw *{display:block;width:100%}
 div.map .gm-style-iw h4,.gm-style-iw p{margin:0;padding:0}

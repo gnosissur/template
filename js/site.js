@@ -81,14 +81,16 @@ window.mobileAndTabletcheck = function() {
   var menu = document.querySelector('nav.title');
   if (!!menu) {
     var navState;
-    menu.toggle = function() {
+    menu.toggle = function(direction) {
       if (!!!menu) return;
-      if (scrollPos >= windowInnerHeight && (navState == 'up' | !!!navState)) {
+      if (scrollPos >= windowInnerHeight && direction === 'up' && (navState == 'up' | !!!navState)) {
         navState = 'down';
         menu.classList.add('nav-up');
-      } else if (scrollPos < windowInnerHeight && (navState == 'down' | !!!navState)) {
+        console.log("up")
+    } else if ((scrollPos < windowInnerHeight || direction === 'down') && (navState == 'down' | !!!navState)) {
         navState = 'up';
         menu.classList.remove('nav-up');
+        console.log("down")
       }
     };
   }
@@ -154,17 +156,19 @@ window.mobileAndTabletcheck = function() {
     onScroll();
   };
 
-  var scrollFrame,
+  var scrollFrame, scrollPosOld,
       headerVisible = true,
       footerVisible = true;
   var onScroll = function() {
-    // Reset showcase lest we tax the browser too much
+
+    scrollPosOld = scrollPos;
     scrollPos = window.scrollY;
+
     if (!!scrollFrame) cancelAnimationFrame(scrollFrame);
     scrollFrame = requestAnimationFrame(function() {
 
       if (!!sliders.length) sliders.reset();
-      if (!!menu) menu.toggle();
+      if (!!menu) menu.toggle(scrollPosOld < scrollPos ? "down" : "up");
 
       if (!!header) {
         if (scrollPos <= windowInnerHeight) {
