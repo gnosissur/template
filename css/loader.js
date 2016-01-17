@@ -68,5 +68,4 @@ var loadcss = document.getElementById("loadcss");
 // LOAD PAGE CSS
 loadCSS( "/css/site.css", loadcss );
 // LOAD MOBILE CSS
-if (window.matchMedia("only screen and (max-width: 760px)").matches)
-    loadCSS('/css/mobile.css', loadcss);
+loadCSS('/css/mobile.css', loadcss, "only screen and (max-width: 760px)");

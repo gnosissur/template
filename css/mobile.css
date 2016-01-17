@@ -1,57 +1,43 @@
-@media (max-device-aspect-ratio: 3/4) and (orientation: portrait) {
-    main > header, article > header, main > footer, article > footer  { height: calc(100vw * (4/3) - 9%); }
-    article > figure { height: calc(80vw * (4/3) - 9%); }
-    article > section:first-child, article > figure:first-child { margin-top: calc(100vw * (4/3) - 9%)!important; }
-    article > section:last-child, article > figure:last-child { margin-bottom: calc(100vw * (4/3) - 9%)!important; }
+footer nav.links {
+    font-size: 1.5em;
+    padding-bottom: 2em;
 }
-@media (max-device-aspect-ratio: 2/3) and (orientation: portrait) {
-    main > header, article > header, main > footer, article > footer  { height: calc(100vw * (3/2) - 9%); }
-    article > figure { height: calc(80vw * (3/2) - 9%); }
-    article > section:first-child, article > figure:first-child { margin-top: calc(100vw * (3/2) - 9%)!important; }
-    article > section:last-child, article > figure:last-child { margin-bottom: calc(100vw * (3/2) - 9%)!important; }
+
+footer > div.notes > iframe {
+    margin: 0!important;
+    padding-bottom: 4em!important;
+    width: initial!important;
 }
-@media (max-device-aspect-ratio: 10/16) and (orientation: portrait) {
-    main > header, article > header, main > footer, article > footer  { height: calc(100vw * (16/10) - 9%); }
-    article > figure { height: calc(80vw * (16/10) - 9%); }
-    article > section:first-child, article > figure:first-child { margin-top: calc(100vw * (16/10) - 9%)!important; }
-    article > section:last-child, article > figure:last-child { margin-bottom: calc(100vw * (16/10) - 9%)!important; }
+
+article > footer {
+    height: initial!important;
 }
-@media (max-device-aspect-ratio: 9/16) and (orientation: portrait) {
-    main > header, article > header, main > footer, article > footer  { height: calc(100vw * (16/9) - 9%); }
-    article > figure { height: calc(80vw * (16/9) - 9%); }
-    article > section:first-child, article > figure:first-child { margin-top: calc(100vw * (16/9) - 9%)!important; }
-    article > section:last-child, article > figure:last-child { margin-bottom: calc(100vw * (16/9) - 9%)!important; }
+
+article > footer > div.notes {
+    position: initial;
+    bottom: initial;
+    left: initial;
+    padding-left: 2em;
 }
-@media (max-device-aspect-ratio: 4/3) and (orientation: landscape) {
-    main > header, article > header, main > footer, article > footer  { height: calc(100vw * (3/4) - 9%); }
-    article > figure { height: calc(80vw * (3/4) - 9%); }
-    article > section:first-child, article > figure:first-child { margin-top: calc(100vw * (3/4) - 9%)!important; }
-    article > section:last-child, article > figure:last-child { margin-bottom: calc(100vw * (3/4) - 9%)!important; }
+
+article > header, article > footer, footer > div.map, section > div.map, article > figure {
+    transition: height 0.5s;
 }
-@media (max-device-aspect-ratio: 3/2) and (orientation: landscape) {
-    main > header, article > header, main > footer, article > footer  { height: calc(100vw * (2/3) - 9%); }
-    article > figure { height: calc(80vw * (2/3) - 9%); }
-    article > section:first-child, article > figure:first-child { margin-top: calc(100vw * (2/3) - 9%)!important; }
-    article > section:last-child, article > figure:last-child { margin-bottom: calc(100vw * (2/3) - 9%)!important; }
+
+footer > div.map, section > div.map {
+    height: 50vh;
 }
-@media (max-device-aspect-ratio: 16/10) and (orientation: landscape) {
-    main > header, article > header, main > footer, article > footer  { height: calc(100vw * (10/16) - 9%); }
-    article > figure { height: calc(80vw * (10/16) - 9%); }
-    article > section:first-child, article > figure:first-child { margin-top: calc(100vw * (10/16) - 9%)!important; }
-    article > section:last-child, article > figure:last-child { margin-bottom: calc(100vw * (10/16) - 9%)!important; }
-}
-@media (max-device-aspect-ratio: 16/9) and (orientation: landscape) {
-    main > header, article > header, main > footer, article > footer  { height: calc(100vw * (9/16) - 9%); }
-    article > figure { height: calc(80vw * (9/16) - 9%); }
-    article > section:first-child, article > figure:first-child { margin-top: calc(100vw * (9/16) - 9%)!important; }
-    article > section:last-child, article > figure:last-child { margin-bottom: calc(100vw * (9/16) - 9%)!important; }
+
+footer > div.notes > span > img {
+    width: 100px;
+    display: block;
 }
 
 body {
     font-size: 70%;
 }
 
-h1.title, div.sub-title-secondary {
+h1.title {
     text-align: center;
     padding: 0 10%;
 }
@@ -98,4 +84,18 @@ article > section > div.bio {
 div.bio > div.image > div.figure {
     right: -10px!important;
     width: 150px!important;
+}
+
+header h1.title { font-size: 3em; }
+header div.sub-title-secondary { font-size: 1em; padding: 0 10%; }
+
+header > #header-content > #header-brand {
+    left: 20px;
+    bottom: 20px;
+    padding-left: 5em;
+}
+
+.faq {
+    -webkit-column-count: initial;
+    column-count: initial;
 }

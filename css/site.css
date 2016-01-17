@@ -1,3 +1,41 @@
+/*#191C1F*/
+
+.faq {
+	counter-reset: my-badass-counter;
+    padding: 0 1em;
+    -webkit-column-count: 2;
+    column-count: 2;
+}
+.faq dt {
+    position: relative;
+    padding: 0 0 4px 0;
+    text-transform: uppercase;
+    font-family: Akzidenz-Grotesk, sans-serif;
+    font-size: 1.5em;
+    color: #DE8F8F;
+}
+.faq dd {
+    margin: 0 0 20px 0;
+    font-family: 'Exchange SSm 4r', Georgia, serif;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: normal;
+}
+.faq dt, .faq dd {
+    position: relative;
+    padding-left: 40px;
+}
+.faq dt:before {
+	content: counter(my-badass-counter);
+	counter-increment: my-badass-counter;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    font-family: Worldwide-Headline, serif;
+    font-size: 1em;
+    font-weight: 600;
+}
+
 /* HTML reset ------------------------------------------------------------------------ */
 p::selection, span::selection, div::selection, h1::selection, h2::selection, h3::selection, blockquote::selection, pre::selection, a::selection { background: rgba(247, 58, 70, 0.3); color: white; }
 a { text-decoration: none; color: inherit; }
@@ -82,11 +120,11 @@ nav.nav-up {
 }
 
 nav.waypoints a.active {
-    background-color: #F73A46;
+    background-color: #EA495F;
 }
 
 nav.waypoints a:hover {
-    background-color: #F73A46;
+    background-color: #EA495F;
     color: #fff;
     width: 120px;
     margin-bottom: 0px;
@@ -142,7 +180,7 @@ article > figure {
 section > p {
     margin-bottom: 1.875em;
     line-height: 1.75em;
-    padding: 0 0.9375em;
+    padding: 0 1em;
     color: inherit;
     font-family: 'Exchange SSm 4r', Georgia, serif;
     font-size: 1.375em;
@@ -205,7 +243,7 @@ section > blockquote:after {
     position: absolute;
     width: 320px;
     height: 1px;
-    background-color: #F73A46;
+    background-color: #EA495F;
 }
 
 main > footer {
@@ -334,6 +372,7 @@ section.no-head { padding-top: 0em; }
 section.short-tail { padding-bottom: 5em; }
 section.no-tail { padding-bottom: 0em; }
 section.full, article > footer { padding: 0; }
+section.shadow { box-shadow: inset 0px 10px 10px -10px rgba(0,0,0,0.3); }
 
 section > blockquote div.shrink {
     transform: scale(1.05, 0.85);
@@ -367,8 +406,17 @@ section > blockquote span.small {
     background: linear-gradient(-20deg, rgba(22, 69, 67, 0.2), #3C1E36);
 }
 
+.gradient-flat {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(335deg, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.3));
+}
+
 .mark {
     position: relative;
+    white-space: nowrap;
 }
 
 .mark:before {
@@ -398,9 +446,9 @@ section > blockquote span.small {
 .grey { background-color: #F5F5F5; }
 .lightergrey { background-color: #FDFDFD; }
 .darkergrey { background-color: #252525; }
-.red { background-color: #EE2B45; }
+.red { background-color: #EA495F; }
 .text-black { color: black!important; }
-.text-red { color: #EE2B45!important; }
+.text-red { color: #EA495F!important; }
 
 .text-fat {
     font-size: 24px;
@@ -447,7 +495,7 @@ section > blockquote span.small {
     position: absolute;
     width: 60px;
     height: 2px;
-    background-color: #EE2B45;
+    background-color: #EA495F;
     left: 50%;
     margin-left: -30px;
     bottom: -10px;
@@ -493,7 +541,7 @@ section > blockquote span.small {
     position: absolute;
     width: 30px;
     height: 2px;
-    background-color: #EE2B45;
+    background-color: #EA495F;
     left: 50%;
     margin-left: -15px;
     bottom: -20px;
@@ -523,7 +571,7 @@ section > blockquote span.small {
     font-family: Akzidenz-Grotesk, sans-serif;
     font-size: 2em;
     color: inherit;
-    background-color: #F73A46;
+    background-color: #EA495F;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
@@ -586,6 +634,13 @@ div.quote-wrapper-left > .author { float: left; left: -7px; }
     transform: translateY(-50%);
 }
 
+.quote-low {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 50px;
+}
+
 .quote-right {
     position: absolute;
     width: 50%;
@@ -606,6 +661,7 @@ div.quote-wrapper-left > .author { float: left; left: -7px; }
     margin: 0 auto;
     text-align: center;
 }
+
 
 .quote-wrapper-right {
     margin: 0 20% 0 0;

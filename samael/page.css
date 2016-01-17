@@ -60,6 +60,10 @@ h1.title:before {
 
 article > section > div.bio {
     position: relative;
+    font-family: 'Exchange SSm 4r', Georgia, serif;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: normal;
 }
 
 article > section > div.bio:after {
@@ -72,7 +76,7 @@ article > section > div.bio:after {
     left: -45px;
 }
 
-article > section > div.bio:before {
+/*article > section > div.bio:before {
     content: '';
     height: 100%;
     width: 1px;
@@ -80,24 +84,23 @@ article > section > div.bio:before {
     position: absolute;
     top: 20px;
     right: -50px;
-}
+}*/
 
 article > section > div.bio > p, section > div.bio > div {
     position: relative;
     margin-bottom: 1.875em;
-    line-height: 1.75em;
     padding: 0 0.9375em;
     color: inherit;
-    font-family: 'Exchange SSm 4r', Georgia, serif;
-    font-size: 1.2em;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.5em;
 }
 
 article > section > div.bio > p > span, article > section > div.bio > div > span {
     margin-left: -20px;
     position: relative;
+    text-transform: uppercase;
+    font-family: Akzidenz-Grotesk, sans-serif;
+    font-size: 1.5em;
+    color: #DE8F8F;
+
 }
 
 article > section > div.bio > p > span:after, article > section > div.bio > div > span:after  {
@@ -124,7 +127,7 @@ div.bio > div.image > div.figure {
     position: absolute;
     top: 0;
     right: -60px;
-    width: 200px;
+    width: 150px;
     height: 100%;
     max-height: 200px;
     background-size: cover;
@@ -149,6 +152,6 @@ div.bio > div.image > div.figure > p {
 div.bio > div.image {
     position: relative;
     display: block;
-    padding-right: 160px;
+    padding-right: 130px;
     min-height: 120px;
 }

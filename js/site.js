@@ -35,7 +35,18 @@ window.mobileAndTabletcheck = function() {
       nav = document.querySelector('nav'),
       navFooter = document.querySelector('main > footer > div.notes'),
       footer = document.querySelector('main > footer'),
-      main = document.querySelector('main');
+      main = document.querySelector('main'),
+      article = document.querySelector('article');
+
+    if (!!header && mobileAndTabletcheck()) {
+        article.insertBefore(header, article.firstChild);
+        header = undefined;
+    }
+
+    if (!!footer && mobileAndTabletcheck()) {
+        article.appendChild(footer);
+        footer = undefined;
+    }
 
   // SCROLLREVEAL
   if (typeof ScrollReveal !== 'undefined') {
@@ -86,11 +97,9 @@ window.mobileAndTabletcheck = function() {
       if (scrollPos >= windowInnerHeight && direction === 'up' && (navState == 'up' | !!!navState)) {
         navState = 'down';
         menu.classList.add('nav-up');
-        console.log("up")
     } else if ((scrollPos < windowInnerHeight || direction === 'down') && (navState == 'down' | !!!navState)) {
         navState = 'up';
         menu.classList.remove('nav-up');
-        console.log("down")
       }
     };
   }
