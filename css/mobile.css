@@ -95,7 +95,7 @@ header > #header-content > #header-brand {
     padding-left: 5em;
 }
 
-.faq {
+section > dl.two-column {
     -webkit-column-count: initial;
     column-count: initial;
 }

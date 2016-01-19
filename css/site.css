@@ -1,36 +1,39 @@
-/*#191C1F*/
-
-.faq {
+section > dl {
 	counter-reset: my-badass-counter;
     padding: 0 1em;
+	margin-left: -40px;
+}
+
+section > dl.two-column {
     -webkit-column-count: 2;
     column-count: 2;
 }
-.faq dt {
+
+section > dl dt {
     position: relative;
     padding: 0 0 4px 0;
     text-transform: uppercase;
     font-family: Akzidenz-Grotesk, sans-serif;
-    font-size: 1.5em;
+    font-size: 2em;
     color: #DE8F8F;
 }
-.faq dd {
+section > dl dd {
     margin: 0 0 20px 0;
     font-family: 'Exchange SSm 4r', Georgia, serif;
-    font-size: 1em;
+    font-size: 1.2em;
     font-style: normal;
     font-weight: normal;
 }
-.faq dt, .faq dd {
+section > dl dt, section > dl dd {
     position: relative;
     padding-left: 40px;
 }
-.faq dt:before {
+section > dl dt:before {
 	content: counter(my-badass-counter);
 	counter-increment: my-badass-counter;
     position: absolute;
     left: 4px;
-    top: 4px;
+    top: 2px;
     font-family: Worldwide-Headline, serif;
     font-size: 1em;
     font-weight: 600;
@@ -50,21 +53,22 @@ nav {
 }
 
 nav.title {
+	height: 4em;
     z-index: 2000;
     overflow:hidden;
-    transition: all 0.2s ease-out;
+    transition: all 0.4s;
     transform: translate3d(0,-5em,0);
     backface-visibility: hidden;
     text-align: center;
-    background-color: white;
+    background-color: #F8F8F8;
     color: black;
-    font-family: 'Gotham-Medium', sans-serif;
+	font-size: 0.85em;
+    font-family: "Open sans", sans-serif;
     text-transform: uppercase;
-    font-size: 0.875em;
-    line-height: 0.875em;
+    line-height: 0.8em;
     letter-spacing: 0;
     will-change: transform;
-    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.4);
+    box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.1);
 }
 
 nav.title > ul {
@@ -77,12 +81,11 @@ nav.title > ul {
 nav.title > ul > li {
     height: 100%;
     float: left;
-    padding-left: 2em;
+    padding-left: 3.5em;
     position: relative;
     display: block;
     color: inherit;
     border-bottom: 0.1875em solid transparent;
-    font-weight: normal;
 }
 
 nav.title > ul > li > a {
@@ -93,11 +96,11 @@ nav.title > ul > li > a {
 }
 
 nav.title > a:hover, nav.title > ul > li > a:hover {
-    box-shadow: inset 0 -0.1875em 0 0 #676767;
+    box-shadow: inset 0 -1px 0 0 #676767;
 }
 
 nav.title > ul > li > a.active {
-    box-shadow: inset 0 -0.1875em 0 0 #f9333f!important;
+    box-shadow: inset 0 -1px 0 0 #f9333f!important;
 }
 
 nav.title > a, nav.title > span {
@@ -368,8 +371,10 @@ footer.small {
 }
 
 section.short-head { padding-top: 5em; }
+section.shorter-head { padding-top: 3em; }
 section.no-head { padding-top: 0em; }
 section.short-tail { padding-bottom: 5em; }
+section.shorter-tail { padding-bottom: 3em; }
 section.no-tail { padding-bottom: 0em; }
 section.full, article > footer { padding: 0; }
 section.shadow { box-shadow: inset 0px 10px 10px -10px rgba(0,0,0,0.3); }
@@ -712,3 +717,19 @@ div.quote-wrapper-left > .author { float: left; left: -7px; }
     background: #373737; /*linear-gradient(transparent, rgba(163,18,89,0.0));*/
     transition: all 0.5s ease-out;
 }
+
+
+
+
+
+.no-margin { margin: 0!important; }
+.no-padding { padding: 0!important; }
+.bg-white { background-color: white!important; color: black!important; }
+.bg-black { background-color: #191C1F!important; color: white!important; }
+.bg-darkgray { background-color: #262B2D!important; color: white!important; }
+.bg-lightgray { background-color: #F8F8F8!important; color: black!important; }
+.bg-red { background-color: #EA495F!important; color: white!important; }
+.bg-orange { background-color: #F4837D!important; color: white!important; }
+.bg-yellow { background-color: #FDCEA9!important; color: white!important; }
+.bg-green { background-color: #99B998!important; color: white!important; }
+.bg-blue { background-color: #98CEE4!important; color: white!important; }
