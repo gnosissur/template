@@ -1,13 +1,16 @@
 // Twitter
 requestIdleCallback(function() {
-    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 
-    setTimeout(function() {
-        [].forEach.call(document.querySelector(".twitter-timeline").contentWindow.document.querySelectorAll(".tweet, .e-entry-title"), function(item) {
-            item.style.fontFamily = "Open sans, sans serif";
-            item.style.textTransform = "uppercase";
-        });
-    }, 1500);
+    var twitter_cb = function() {
+        setTimeout(function() {
+            [].forEach.call(document.querySelector(".twitter-timeline").contentWindow.document.querySelectorAll(".tweet, .e-entry-title"), function(item) {
+                item.style.fontFamily = "Open sans, sans-serif";
+                item.style.textTransform = "uppercase";
+            });
+        }, 1000);
+    };
+
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";js.onload=twitter_cb;fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 });
 
 // Google analytics

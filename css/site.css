@@ -14,7 +14,7 @@ section > dl dt {
     padding: 0 0 4px 0;
     text-transform: uppercase;
     font-family: Akzidenz-Grotesk, sans-serif;
-    font-size: 2em;
+    font-size: 1.8em;
     color: #DE8F8F;
 }
 section > dl dd {
@@ -33,7 +33,7 @@ section > dl dt:before {
 	counter-increment: my-badass-counter;
     position: absolute;
     left: 4px;
-    top: 2px;
+    top: 0px;
     font-family: Worldwide-Headline, serif;
     font-size: 1em;
     font-weight: 600;
@@ -63,7 +63,7 @@ nav.title {
     background-color: #F8F8F8;
     color: black;
 	font-size: 0.85em;
-    font-family: "Open sans", sans-serif;
+    font-family: "Gotham medium", sans-serif;
     text-transform: uppercase;
     line-height: 0.8em;
     letter-spacing: 0;
@@ -721,7 +721,8 @@ div.quote-wrapper-left > .author { float: left; left: -7px; }
 
 
 
-
+.no-before:before { display: none; }
+.no-after:after { display: none; }
 .no-margin { margin: 0!important; }
 .no-padding { padding: 0!important; }
 .bg-white { background-color: white!important; color: black!important; }
