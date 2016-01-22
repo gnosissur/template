@@ -4,7 +4,7 @@ WebFontConfig = {
         urls: ['/fonts/fonts.css', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css']
     },
     google: {
-        families: ['Open Sans:400']
+        families: ['Open Sans:400', 'Tangerine:700']
     },
 };
 (function() {

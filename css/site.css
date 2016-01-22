@@ -33,7 +33,7 @@ section > dl dt:before {
 	counter-increment: my-badass-counter;
     position: absolute;
     left: 4px;
-    top: 0px;
+    top: 4px;
     font-family: Worldwide-Headline, serif;
     font-size: 1em;
     font-weight: 600;
