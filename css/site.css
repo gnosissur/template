@@ -1,7 +1,7 @@
 section > dl {
 	counter-reset: my-badass-counter;
     padding: 0 1em;
-	margin-left: -40px;
+	margin-left: -35px;
 }
 
 section > dl.two-column {
@@ -15,7 +15,9 @@ section > dl dt {
     text-transform: uppercase;
     font-family: Akzidenz-Grotesk, sans-serif;
     font-size: 1.8em;
-    color: #DE8F8F;
+    color: #ccc;
+	-webkit-column-break-after: avoid;
+	column-break-after: avoid;
 }
 section > dl dd {
     margin: 0 0 20px 0;
@@ -27,16 +29,18 @@ section > dl dd {
 section > dl dt, section > dl dd {
     position: relative;
     padding-left: 40px;
+	-webkit-column-break-inside: avoid;
+	column-break-inside: avoid;
+	page-break-inside: avoid;
+    break-inside: avoid-column;
+    display:table;
 }
 section > dl dt:before {
 	content: counter(my-badass-counter);
 	counter-increment: my-badass-counter;
     position: absolute;
-    left: 4px;
-    top: 4px;
-    font-family: Worldwide-Headline, serif;
-    font-size: 1em;
-    font-weight: 600;
+    left: 10px;
+    top: 0;
 }
 
 /* HTML reset ------------------------------------------------------------------------ */
